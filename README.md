@@ -1,2 +1,2 @@
-# rhobin-challenge.github.io
-Website code for the 1st Rhobin Challenge Workshop
+# humogen.github.io
+Website code for the 1st HuMoGen Challenge Workshop
