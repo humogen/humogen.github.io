@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>RHOBIN Workshop@CVPR23</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link href="data/default.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" href="./data/rhobin-logo.png" />
+    <meta property='og:title' content='RHOBIN Workshop: Reconstruction of Human-Object Interactions @ CVPR23'/>
+    <meta property='og:url' content='https://rhobin-challenge.github.io/' />
+    <meta property="og:type" content="website" />
+  </head>
+
+  <body>
+    <div id="header">
+      <div id="logo">
+	<h1>
+		<center>
+	    	 <span style="font-size:50%;color:#777;font-weight:normal">The first Workshop on</span><br>
+             Reconstruction of Human-Object Interactions (RHOBIN)
+             
+		</center>
+	</h1><br>
+  <div class="my-image-box-header">
+   <center><img src="./data/rhobin-logo-no-bg.png" alt="rhobin-logo" width="128" height="168">
+    <img src="data/Adobe_Corporate_logo.svg.png" width="320" height="83"> 
+
+  </center>
+    
+  </div>
+  <h2>
+    <center>
+      <span style="font-size:92%;color:#777;font-weight:normal">June 19 @ 
+          <a href="https://cvpr2023.thecvf.com/" target="_blank">CVPR 2023</a> 
+      <span style="font-size:92%;color:#777;font-weight:bold">In Person</span><br>
+      <span style="font-size:130%;color:#777;font-weight:bold">East 18@Vancouver Convention Center</span>      
+    </center>
+	</h2><br>
+</div>
+
+<div id="menu">
+    <center>
+      <ul>
+        <li><a href="#speakers">Speakers</a></li>
+        <li><a href="./schedule.html" accesskey="2">Schedule</a></li>
+        <li><a href="./papers.html" accesskey="3">Papers & Winners</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </center>
+</div>
+
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+              mybutton.style.display = "block";
+                } else {
+                        mybutton.style.display = "none";
+                          }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+      document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+}
+</script>
+
+
+	<div id="content">
+<h2>News</h2>
+<p>
+<ul>
+  <li>
+    [June 19, 2023] Come visit us at <strong> East 18 </strong> room in Vancouver Convention Center! 
+  </li>
+
+  <li>
+    [June 14, 2023] Huge thanks to <a href="https://www.adobe.com"> <span style="font-size: 18px; color: #ff0000">Adobe </span> </a>&#128079; for sponsoring our workshop. More details about the awards under <a href="./papers.html">Papers & Winners</a>!
+  </li>
+  <li>
+    [May 26, 2023] The winners of the challenges and the accepted papers are announced in <a href="./papers.html">Papers & Winners</a>. Congratulations to all the participants!
+</li>
+  <li>
+    [May 25, 2023] Please check out our speaker lineup, in our <a href="#speakers">Schedule</a>.
+</li>
+  <li>
+    [Jan 16, 2023] Workshop website launched, with <a href="#cfp">Call-for-Papers</a> and <a href="#speakers">speakers</a> announced.
+</li>
+<li>
+[Mar 12, 2023] Call for papers and single-page abstracts, submit your papers <a href="#cfp">Call-for-Papers</a>!
+</li>
+</ul>
+</p>
+
+
+<h2>Introduction</h2>
+<p>
+This half-day workshop will provide a venue to present and discuss state-of-the-art research in
+the reconstruction of human-object interactions from images. The focus will be on recent
+developments in human-object interaction learning and its impact on 3D scene parsing, building
+human-centric robotic assistants, and the general understanding of human behaviors.
+</p>
+<p>
+Humans are an essential component of the interaction. Hence, it is crucial to estimate the
+human pose, shape, and motion as well as objects that are being interacted with accurately to
+achieve a realistic interaction. 3D Human Pose and Motion estimation from images or videos
+have attracted a lot of interest. However, in most cases, the task does not explicitly involve
+objects and the interaction with them. Whether it is 2D detection and/or monocular 3D
+reconstruction, objects and humans have been studied separately. Humans are in constant
+contact with the world as they move through it and interact with it. Considering the interaction
+between them can marry the best of both worlds.
+</p>
+
+  <p>Participation details of the <b>Rhobin Challenge</b> can be found below and paper submission can be found below.
+  </p>
+	
+<h2 id="speakers">Invited Speakers (Check out the <a href="./schedule.html">Full Schedule</a>)</h2>
+<center>
+
+<table style="width:100%">
+<p>
+
+<tr>
+<td><center><a href="http://people.ciirc.cvut.cz/~sivic/" target="_blank"> <img alt src="data/josef_sivic.jpg" height="170"/> </a></center> </td>
+<td><center><a href="https://vlg.inf.ethz.ch/team/Prof-Dr-Siyu-Tang.html" target="_blank"><img alt src="data/siyu.jpeg" height="170"/> </a></center> </td>
+<td><center><a href="https://tsattler.github.io/" target="_blank"><img alt src="data/Torsten_profile_small.jpg" height="170"/> </a></center></td>
+</tr>
+    <tr>
+        <td> <center> <h3> Josef Sivic</h3> </center></td>
+        <td> <center> <h3> Siyu Tang</h3> </center></td>
+        <td> <center> <h3> Torsten Sattler</h3> </center></td>
+        </tr>
+        <tr>
+            <td> <center> <font size= "2">Czech Institute of Informatics, Robotics and Cybernetics (CIIRC)<br>Czech Technical University (CTU)</font></center> </td>
+            <td> <center> <font size= "2">ETH Zürich</font></center> </td>
+            <td> <center> <font size= "2">Czech Institute of Informatics, Robotics and Cybernetics (CIIRC)<br>Czech Technical University (CTU)</font></center> </td>
+        </tr>
+
+        <tr>
+<td><center><a href="https://www.cs.utexas.edu/users/grauman/" target="_blank"> <img alt src="data/grauman.jpg" height="170"/> </a></center> </td>
+    <td><center><a href="http://persci.mit.edu/people/adelson" target="_blank"> <img alt src="data/ted-adelson.png" height="170"/> </a></center> </td>
+</tr>
+        <tr>
+        <td> <center> <h3> Kristen Grauman </h3> </center></td>
+        <td> <center> <h3> Edward H Adelson </h3> </center></td>
+</tr>
+        <tr>
+<td> <center> <font size= "2">University of Texas Austin<br>Facebook AI Research (FAIR)</font></center> </td>
+            <td> <center> <font size= "2">Massachusetts Institute of Technology (MIT)</font></center> </td>
+</tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+
+</p>
+</table>
+</center>
+
+<!-- (Check out the <a href="./papers.html">Accepted Papers</a>) -->
+<h2 id="cfp">Call for Papers </h2>
+<p>
+  In this workshop, we invite papers on topics related to human-centered interaction modeling.
+  This could include, but is not limited to:
+</p>
+  <p>
+      <ul>
+        <li>Estimation of 3D human pose and shape from a single image or video</li>
+        <li>3D human motion prediction</li>
+        <li>Interactive motion sequence generation</li>
+        <li>Shape reconstruction from a single image</li>
+        <li>Object 6-DoF pose estimation and tracking</li>
+        <li>Human-centered object semantics and functionality modeling</li>
+        <li>Joint reconstruction of both bodies and objects/scenes</li>
+        <li>Interaction modeling between humans and objects, e.g., contact, physics properties</li>
+        <li>Detection of human-object interaction semantics</li>
+        <li>New datasets or benchmarks that have 3D annotations of both humans and objects/scenes </li>
+  </ul>
+  </p>
+  
+<p>
+  <p>We invite submissions of a maximum of 8 pages, excluding references, using the CVPR template. Submissions should follow CVPR 2023 instructions. All papers will be subject to a double-blind review process, i.e. authors must not identify themselves on the submitted papers. The reviewing process is single-stage without rebuttals.
+    We also invite <b>1-page abstract</b> submissions of already published works or relevants works in progress.
+  
+    <h3>Submission Instructions</h3>
+<br>
+  Submissions are anonymous and should not include any author names, affiliations, and contact information in the PDF.
+  <ul>
+    <li>Online Submission System:  <a href="https://cmt3.research.microsoft.com/Rhobin2023/" target="_blank">https://cmt3.research.microsoft.com/</a></li>
+    <li>Submission Format: <a href="https://www.google.com/url?q=https://media.icml.cc/Conferences/CVPR2023/cvpr2023-author_kit-v1_1-1.zip&sa=D&source=docs&ust=1673735151815622&usg=AOvVaw1T9itdE1rib-vg4rowRwgr" target="_blank">official CVPR template</a>  (double column; no more than 8 pages, excluding reference).</li>
+
+  </ul>
+  If you have any questions, feel free to reach out to us.
+  </p>
+ 
+  <h3>Timeline Table (11:59 PM, Pacific Time)</h3>
+  <ul>
+      <li>Full-paper submission deadline: <del>March 9</del> <b>March 20,</b> 2023 </li>
+      <li>Notification to authors: <del>March 30</del> <b>April 3,</b> 2023</li>
+      <li>1-page Abstract submission deadline: <b>May 15,</b> 2023</li>
+      <li>Camera-ready deadline: <del>April 6</del> <b>April 10,</b> 2023</li>
+      <li>Workshop: June 19, 2023</li>
+    </ul>
+</p>
+
+<h2 id="cfp">The First Rhobin Challenge</h2>
+<p>Given the importance of human-object interaction, as also highlighted by this workshop, we propose a challenge on reconstructing 3D human and object from monocular RGB images, with a focus on images with close human object interactions. We have seen promising progress in reconstructing human body mesh or estimating 6DoF object pose from single images. However, most of these works focus on occlusion-free images which are not realistic for settings during close human-object interaction since humans and objects occlude each other. This makes inference more difficult and poses challenges to existing state-of-the-art methods. In this workshop, we want to examine how well the existing human and object reconstruction methods work under more realistic settings and more importantly, understand how they can benefit each other for accurate interaction reconstruction. The recently released BEHAVE dataset (CVPR'22), enables for the first time joint reasoning about human-object interactions in real settings. We will use the dataset and this workshop to sparkle research in human-object interaction modeling. We already have a publicly available baseline approach and evaluation protocols, CHORE Xie et al. ECCV'22 for the challenge. 
+</p>
+        <h3>Challenge website</h3>
+        <ul>
+        <li><a href="https://codalab.lisn.upsaclay.fr/competitions/9280" target="_blank">3D human reconstruction</a></li>
+        <li><a href="https://codalab.lisn.upsaclay.fr/competitions/9336" target="_blank">6DoF pose estimation of rigid objects</a></li>
+        <li><a href="https://codalab.lisn.upsaclay.fr/competitions/9337" target="_blank">Joint reconstruction of human and object</a></li>
+        </ul>
+
+        <h3>Important dates</h3>
+        <ul>
+            <li>Challenge open: <b>February 1 00:00, 2023 UTC</b></li>
+            <li>Submission deadline: <b>May 16 23:59, 2023 UTC</b></li>
+            <li>Winner award: June 19, 2023</li>
+            
+          </ul>
+
+        <h2 id="organizers">Workshop Organizers</h2>
+<center>
+
+<table style="width:100%">
+<p>
+
+<tr>
+<td><center><a href="https://xiwang1212.github.io/homepage/" target="_blank"> <img alt src="data/xiwang.jpg" height="170"/> </a></center> </td>
+<td><center><a href="https://cs.stanford.edu/~kaichun/" target="_blank"><img alt src="data/kaichun.jpg" height="170"/> </a></center> </td>
+<td><center><a href="https://is.mpg.de/~nathanasiou" target="_blank"> <img alt src="data/nathanasiou.jpg" height="170"/> </a></center> </td>
+</tr>
+<tr>
+<td> <center> <h3> Xi Wang </h3> </center></td>
+<td> <center> <h3> Kaichun Mo </h3> </center></td>
+<td> <center> <h3> Nikos Athanasiou </h3> </center></td>
+</tr>
+<tr>
+<td> <center> <font size= "2">ETH, Zurich</font></center> </td>
+<td> <center> <font size= "2">NVIDIA Research, Seattle</font></center> </td>
+<td> <center> <font size= "2"> Max-Planck-Institute for Intelligen Systems, Tübingen</font></center> </td>
+</tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+
+<tr>
+  <td><center><a href="https://research.adobe.com/person/paulchhuang/" target="_blank"> <img alt src="data/paulhuang.jpeg" height="170"/> </a></center> </td>
+  <td><center><a href="https://virtualhumans.mpi-inf.mpg.de/people/pons-moll.html" target="_blank"> <img alt src="data/GPM_new_crop.png" height="170"/> </a></center> </td>
+  <td><center><a href="https://ait.ethz.ch/people/hilliges/" target="_blank"> <img alt src="data/otmarhilliges.jpg" height="170"/> </a></center> </td>
+</tr>
+<tr>
+<td> <center> <h3>  Chun-Hao (Paul) Huang </h3> </center></td>
+<td> <center> <h3> Gerard Pons-Moll</h3> </center></td>
+<td> <center> <h3> Otmar Hilliges  </h3> </center></td>
+</tr>
+<tr>
+<td> <center> <font size= "2"> Adobe, London </font></center> </td>
+<td> <center> <font size= "2"> University of Tübingen <br>Max Planck Institute for Informatics, Saarland Informatics Campus</font></center> </td>
+<td> <center> <font size= "2"> ETH, Zurich</font></center> </td>
+</tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+
+</p>
+</table>
+</center>
+
+<h2 id="organizers">Challenge Organizers</h2>
+<center>
+
+<table style="width:100%">
+<p>
+
+<tr>
+<td><center><a href="https://people.mpi-inf.mpg.de/~xxie/" target="_blank"> <img alt src="data/xianghui.png" height="170"/> </a></center> </td>
+<td><center><a href="https://virtualhumans.mpi-inf.mpg.de/people/Bhatnagar.html" target="_blank"> <img alt src="data/bhatnagar_cropped.jpg" height="170"/> </a></center> </td>
+<td><center><a href="https://virtualhumans.mpi-inf.mpg.de/people/pons-moll.html" target="_blank"> <img alt src="data/GPM_new_crop.png" height="170"/> </a></center> </td>
+</tr>
+<tr>
+<td> <center> <h3> Xianghui Xie </h3> </center></td>
+<td> <center> <h3> Bharat Lal Bhatnagar </h3> </center></td>
+<td> <center> <h3> Gerard Pons-Moll </h3> </center></td>
+</tr>
+<tr>
+<td> <center> <font size= "2">Max Planck Institute for Informatics, Saarland Informatics Campus</font></center> </td>
+<td> <center> <font size= "2">Max Planck Institute for Informatics, Saarland Informatics Campus</font></center> </td>
+<td> <center> <font size= "2"> University of Tübingen <br>Max Planck Institute for Informatics, Saarland Informatics Campus</font></center> </td>
+</tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+
+
+</p>
+</table>
+</center>
+
+<h2 id="Committee Members">Committee Members</h2>
+<p>
+Berat Mert Albaba (ETH Zurich)<br>
+Hsuan-I Ho (ETH Zurich)<br>
+Markos Diomataris (Max Planck Institute for Intelligent Systems)<br>
+Dimitrije Antic (University of Amsterdam)<br>
+Ilya Petrov (University of Tuebingen)<br>
+Yi Li (University of Washington)<br>
+Yijia Weng (Stanford University)<br>
+Artur Grigorev (Samsung)<br>
+Keyang Zhou (University of Tuebingen)<br>
+Lea Mueller (Max Planck Institute for Intelligent Systems)<br>
+Chen Guo (ETH Zurich)<br>
+Xiaohan Zhang (University of Tuebingen, MPI Informatics)<br>
+Zijian Dong (ETH Zurich)<br>
+Aditya Sanghi (Autodesk, Autodesk AI Lab)<br>
+Alexey Gavryushin (ETH Zurich)<br>
+Yuxuan Xue (University of Tuebingen)<br>
+Zhenyu Chen (Technical University of Munich)<br>
+</p>
+
+<h3 id="contact">Contact Info</h2>
+<p>E-mail: 
+<a href="mailto:rhobinchallenge@gmail.com" target="_blank">rhobinchallenge@gmail.com</a>
+</p>
+
+<h3 id="contact">Acknowledgements</h2>
+<p>Website template borrowed from: 
+<a href="https://futurecv.github.io/" target="_blank">https://futurecv.github.io/</a>
+(Thanks to <a href="https://www.cs.cmu.edu/~dpathak/" target="_blank">Deepak Pathak</a>)
+</p>
+
+
+<div style="clear: both;">&nbsp;</div>
+</div><br><br>
+
+</body>
+</html>

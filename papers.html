@@ -1,0 +1,331 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <head>
+        <title>CVPR23 RHOBIN Workshop</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <link href="data/default.css" rel="stylesheet" type="text/css" />
+    	<link rel="icon" type="image/png" href="./data/rhobin-logo.png" />        
+	<meta property='og:title' content='RHOBIN Workshop: Reconstruction of Human-Object Interactions @ CVPR23'/>
+        <meta property='og:url' content='https://rhobin-challenge.github.io/' />
+        <meta property="og:type" content="website" />
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function moreOrLess(tableData) {
+            obj = tableData.find("span");
+            button = tableData.find("button");
+            console.log(obj.hasClass("hidden"))
+            if (obj.hasClass("hidden")) {
+                obj.slideDown("fast");
+                obj.removeClass("hidden");
+                button.html("Hide Abstract");
+            } else {
+                obj.slideUp("fast");
+                obj.addClass("hidden");
+                button.html("Show Abstract");
+            }
+        }
+    </script>
+  </head>
+
+  <body>
+    <div id="header">
+      <div id="logo">
+	<h1>
+		<center>
+	    	 <span style="font-size:50%;color:#777;font-weight:normal">The first Workshop on</span><br>
+             Reconstruction of Human-Object Interactions (RHOBIN)
+		</center>
+	</h1><br>
+    </center>
+    </h1><br>
+    <div class="my-image-box-header">
+    <center><img src="./data/rhobin-logo-no-bg.png" alt="rhobin-logo" width="128" height="168">
+    <img src="data/Adobe_Corporate_logo.svg.png" width="320" height="83"> 
+
+    </center>
+
+    </div>
+    <h2>
+		<center>
+      <span style="font-size:92%;color:#777;font-weight:normal">June 19 @ 
+          <a href="https://cvpr2023.thecvf.com/" target="_blank">CVPR 2023</a> 
+      <span style="font-size:92%;color:#777;font-weight:bold">In Person</span><br>
+      <span style="font-size:130%;color:#777;font-weight:bold">East 18@Vancouver Convention Center</span>      
+
+    </center>
+	</h2><br>
+	</div>
+  
+    <div id="menu">
+    <center>
+      <ul>
+        <li class="first"><a href="./index.html" accesskey="1">Home</a></li>
+      </ul>
+    </center>
+</div>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+              mybutton.style.display = "block";
+                } else {
+                        mybutton.style.display = "none";
+                          }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+      document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+}
+</script>
+
+
+        <div id="content">
+<!-- <p>
+<ul>
+<li>
+    We are hosting <a href="https://app.gather.town/app/zDHzSsCHaRrEvEq4/ECCV%20VOLI%20Workshop" target="_blank">the poster session</a> on GatherTown (check out <a href="./gathertown_instruction.pdf" target="_blank">the GatherTown instructions</a> on how to join).
+</li>
+</ul>
+</p> -->
+<div style="margin-top: 100px;">
+<br>
+    <strong>
+    <p class="poster_title">
+    We are happy to announce the winners of the RHOBIN Challenge!
+    Thanks to the generous sponsorhsip of <a href="https://www.adobe.com"></a><span style="font-size: 24px; color: #ff0000">Adobe
+         </span></a>
+    each winning team will receive a gift of 500 USD &#127881;!
+</strong>
+</div>
+
+<center>
+<h2>Challenge Winners</h2><br>
+<table>
+    <tr class="row_type_A">
+        <td width=200px" , class="paper_id"> 3D human reconstruction </td>
+        <td width="600px">
+            <div style="text-align: center;">
+                <strong><span class="author">
+                    Hao Chen, Xia Jia from NIP3D-ARteam<br><br>
+                    Yinghui Fan, Qi Fang, Yanjun Li from NetEase Games AI Lab
+                </span></strong>
+            </div>
+            <div style="text-align: center;">
+                <!-- <a href="" target="_blank">[PDF]</a>
+                <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+            </div>
+        </td>
+        <!-- <td id="3dhps">
+            <p class="poster_title">
+
+            </p>  
+        </td> -->
+    </tr>
+    <tr class="row_type_B">
+        <td width="200px" , class="paper_id">6DoF pose estimation of rigid objects
+        </td>
+        <td width="600px">
+            <div style="text-align: center;">
+                <strong><span class="author">
+                    Zerui Zhang, Liangxian Cui, Xiao Lin, Bingqiao Qian, Jie Xiao
+                    <br><br>University of Science and Technology of China
+
+                </span></strong>
+            </div>
+            <div style="text-align: center;">
+        </td>
+    </tr>
+     
+
+    <tr class="row_type_A">
+        <td width="200px" , class="paper_id">Joint reconstruction of human and object</td>
+        <td width="600px">
+            <div style="text-align: center;">
+                <strong><span class="author">
+                    Hyeongjin Nam, Daniel Sungho Jung, Kihoon Kim, Kyoung Mu Lee <br><br>
+                    Department of ECE & ASRI & IPAI, Seoul National University, Korea
+                </div>
+            <div style="text-align: center;">
+                <!-- <a href="" target="_blank">[PDF]</a>
+                <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+            </div>
+        </td>
+        <!-- <td id="hoi">
+            <p class="poster_title">
+        </td> -->
+    </tr>
+     
+</table>
+</center>
+<center>
+
+            <h2>Paper Presentations</h2>
+            <table>
+                <tr class="row_type_A">
+                    <td width="20px" , class="paper_id">1</td>
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">Alexander J Avery (Rochester Institute of Technology)*; Andreas Savakis (Rochester Institute of Technology)
+                                </span></strong>
+                        </div>
+                        <div style="text-align: center;">
+                            <a href="" target="_blank">[PDF]</a>
+                            <a href="https://youtu.be/" target="_blank">[Video]</a>
+                        </div>
+                    </td>
+
+
+                    <td id="paper1">
+                        <p class="poster_title">
+                             DeepRM: Deep Recurrent Matching for 6D Pose Refinement 
+                        </p>
+                        <span class="hidden">
+                            <p><strong>Abstract:</strong>
+                                Precise 6D pose estimation of rigid objects from RGB images is a critical but challenging task in robotics, augmented reality and human-computer interaction. To address this problem, we propose DeepRM, a novel recurrent network architecture for 6D pose refinement. DeepRM leverages initial coarse pose estimates to render synthetic images of target objects. The rendered images are then matched with the observed images to predict a rigid transform for updating the previous pose estimate. This process is repeated to incrementally refine the estimate at each iteration. The DeepRM architecture incorporates LSTM units to propagate information through each refinement step, significantly improving overall performance. In contrast to current 2-stage Perspective-n-Point based solutions, DeepRM is trained end-to-end, and uses a scalable backbone that can be tuned via a single parameter for accuracy and efficiency. During training, a multi-scale optical flow head is added to predict the optical flow between the observed and synthetic images. Optical flow prediction stabilizes the training process, and enforces the learning of features that are relevant to the task of pose estimation. Our results demonstrate that DeepRM achieves state-of-the-art performance on two widely accepted challenging datasets.
+                            </p>
+                        </span>
+                        <div style="text-align: center;">
+                            <button onclick="moreOrLess($('#paper1'))">Show Abstract</button>
+                        </div>
+                    </td>
+                </tr>
+               
+               <tr class="row_type_B">
+                    <td width="20px" , class="paper_id">2</td>
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Nikolaos Zioulis (Independent Researcher)*; James F O'Brien (Klothed Technologies)                                </span></strong>
+                        </div>
+                        <div style="text-align: center;">
+                            <a href="" target="_blank">[PDF]</a>
+                            <a href="https://youtu.be/" target="_blank">[Video]</a>
+                        </div>
+                    </td>
+                    <td id="paper2">
+                        <p class="poster_title">
+                            KBody: Towards general, robust, and aligned monocular whole-body estimation                         </p>
+                        <span class="hidden">
+                            <p><strong>Abstract:</strong>
+                                KBody is a method for fitting a low-dimensional body model to an image. It follows a predict-and-optimize approach, relying on data-driven model estimates for the constraints that will be used to solve for the body's parameters. Acknowledging the importance of high quality correspondences, it leverages ``virtual joints" to improve fitting performance, disentangles the optimization between the pose and shape parameters, and integrates asymmetric distance fields to strike a balance in terms of pose and shape capturing capacity, as well as pixel alignment. We also show that generative model inversion offers a strong appearance prior that can be used to complete partial human images and used as a building block for generalized and robust monocular body fitting. Project page: https://klothed.github.io/KBody.
+                            </p>
+                        </span>
+                        <div style="text-align: center;">
+                            <button onclick="moreOrLess($('#paper2'))">Show Abstract</button>
+                        </div>
+                    </td>
+                </tr>
+                 
+
+                <tr class="row_type_B">
+                    <td width="20px" , class="paper_id">3</td>
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Gee-Sern Hsu (National Taiwan University of Science and Technology)*; Yu-Hong Lin (National Taiwan University of Science and Technology); Chin-Cheng Chang (National Taiwan University of Science and Technology)                                </span></strong>
+                        </div>
+                        <div style="text-align: center;">
+                            <a href="" target="_blank">[PDF]</a>
+                            <a href="https://youtu.be/" target="_blank">[Video]</a>
+                        </div>
+                    </td>
+                    <td id="paper3">
+                        <p class="poster_title">
+                            Pretrained Pixel-Aligned Reference Network for 3D Human Reconstruction</p>
+                        <span class="hidden">
+                            <p><strong>Abstract:</strong>
+                                We propose the Pretrained Pixel-aligned Reference (PPR) network for 3D human reconstruction. The PPR network utilizes a pretrained model embedded with a reference mesh surface and full-view normals to better constrain spatial query processing, leading to improved mesh surface reconstruction. Our network consists of a dual-path encoder and a query network. The dual-path encoder extracts front-back view features from the input image through one path, and full-view reference features from a pretrained model through the other path. These features, along with additional spatial traits, are concatenated and processed by the query network to estimate the desired mesh surface. During training, we consider points on the pretrained model as well as around the ground-truth mesh surfaces, enabling the implicit function to better capture the mesh surface and overall posture. We evaluate the performance of our approach through experiments on the THuman 2.0 and RenderPeople datasets, and compare it with state-of-the-art methods.
+                            </p>
+                        </span>
+                        <div style="text-align: center;">
+                            <button onclick="moreOrLess($('#paper3'))">Show Abstract</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+        </center>
+
+
+            <h2>Abstract Presentations</h2>
+            <table>
+               
+               <tr class="row_type_B">
+
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Aditya Prakash (University of Illinois Urbana-Champaign)*; Matthew Chang (UIUC); Matthew Jin (University of Illinois at Urbana-Champaign); Saurabh Gupta (UIUC)                         </div>
+                        <div style="text-align: center;">
+                            <a href="" target="_blank">[PDF]</a>
+                            <a href="https://youtu.be/" target="_blank">[Video]</a>
+                        </div>
+                    </td>
+                    <td id="abstract1">
+                        <p class="poster_title">
+                            Learning Hand-Held Object Reconstruction from In-The-Wild Videos 
+                            <span class="hidden">
+                            <!-- <p><strong>Abstract:</strong>
+                                Prior works for reconstructing hand-held objects from a single image rely on direct 3D shape supervision which is challenging to gather in real world at scale. Consequently, these approaches do not generalize well when presented with novel objects in in-the-wild settings. While 3D supervision is a major bottleneck, there is an abundance of in-the-wild raw video data showing hand-object interactions. In this paper, we automatically extract 3D supervision (via multiview 2D supervision) from such raw video data (e.g. VISOR) to scale up the learning of models for hand-held object reconstruction. This requires tackling two key challenges: unknown camera pose and occlusion. For the former, we use hand pose (from existing techniques) as a proxy for object pose. For the latter, we learn data-driven 3D shape priors using synthetic objects from the ObMan dataset. We use these indirect 3D cues to train occupancy networks that predict the 3D shape of objects from a single RGB image. Our experiments on the MOW dataset show the effectiveness of these supervisory signals in predicting coherent 3D shapes and generalizing better to in-the-wild images compared to baselines. Since our approach does not require 3D supervision, we can also scale it up by incorporating additional datasets. -->
+                            </p>
+                        </span>
+                        <div style="text-align: center;">
+                            <!-- <button onclick="moreOrLess($('#abstract1'))">Show Abstract</button> -->
+                        </div>
+                    </td>
+                </tr>
+                 
+
+                <tr class="row_type_B">
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Yi-Ling Qiao (University of Maryland, College Park)*; Shutong Zhang (University of Toronto); Guanglei Zhu (University of Toronto); Eric Heiden (NVIDIA); Dylan Turpin (University of Toronto); Ming C Lin (UMD-CP & UNC-CH ); Miles Macklin (NVIDIA); Animesh Garg (University of Toronto, Vector Institute, Nvidia)
+                            </div>
+                        <div style="text-align: center;">
+                            <a href="" target="_blank">[PDF]</a>
+                            <a href="https://youtu.be/" target="_blank">[Video]</a>
+                        </div>
+                    </td>
+                    <td id="abstract2">
+                        <p class="poster_title">
+                            HandyPriors: Physically Consistent Perception of Hand-Object Interactions with Differentiable Priors                         <span class="hidden">
+                            <!-- <p><strong>Abstract:</strong>
+                                Various heuristic objectives for modeling hand-object interaction have been employed in past work. However, due to the lack of a cohesive framework, these objectives often have a narrow scope of application and are limited by their efficiency or accuracy. In this paper, we propose HandyPriors, a unified and general pipeline for human-object interaction scenes by leveraging recent advances in differentiable physics and rendering. Our approach uses rendering priors to align with input images and segmentation masks, while physics priors mitigate penetration and relative-sliding across frames. Furthermore, we present two alternatives for hand and object pose estimation. The optimization-based pose estimation achieves high accuracy, while the filtering-based tracking, which utilizes the differentiable priors as dynamics and observation models, runs faster. We show that HandyPriors achieves comparable or better results in the pose estimation task, and the differentiable physics module enables us to predict contact information for pose refinement. We also show that our approach generalizes to perception tasks including robotic hand manipulation and human-object pose estimation in the wild.
+
+                            </p> -->
+                        </span>
+                        <div style="text-align: center;">
+                            <!-- <button onclick="moreOrLess($('#abstract2'))">Show Abstract</button> -->
+                        </div>
+                    </td>
+                </tr>
+                 
+            </table>
+
+
+<h2 id="contact">Contact Info</h2>
+<p>E-mail: 
+<a href="mailto:rhobinchallenge@gmail.com" target="_blank">rhobinchallenge@gmail.com</a>
+</p>
+
+
+
+<div style="clear: both;">&nbsp;</div>
+</div><br><br>
+
+</body>
+
+</html>
