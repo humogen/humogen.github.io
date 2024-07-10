@@ -1,1143 +1,82 @@
-Last login: Fri Jul  5 17:46:58 on ttys003
-platform is Mac
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>HuMoGen Workshop@CVPR24</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link href="data/default.css" rel="stylesheet" type="text/css" />
+    <!-- <link rel="icon" type="image/png" href="./data/humogen_logo.png" /> -->
+    <meta property='og:title' content='HuMoGen: Workshop on Human Motion Generation @ CVPR24'/>
+    <meta property='og:url' content='https://humogen.github.io/' />
+    <meta property="og:type" content="website" />
+  </head>
 
-The default interactive shell is now zsh.
-To update your account to use zsh, please run `chsh -s /bin/zsh`.
-For more details, please visit https://support.apple.com/kb/HT208050.
-sigalraab@h-MacBook-Pro-sl-Sigal-2:~/Downloads$ ssh c9
-Welcome to NVIDIA DGX Server Version 5.0.5 (GNU/Linux 5.4.0-73-generic x86_64)
-
-  System information as of Fri 05 Jul 2024 22:02:02 IDT
-
-  System load:    4.19      Processes:                452
-  Usage of /home: unknown   Users logged in:          3
-  Memory usage:   8%        IPv4 address for docker0: 192.168.127.1
-  Swap usage:     6%        IPv4 address for eno1:    132.67.130.180
-  Temperature:    49.0 C
-
-Health of this system could not be determined. Please use 'sudo nvsm show alerts' to see any alerts the system might have.
-
-Last login: Fri Jul  5 21:58:18 2024 from 10.12.10.18
-platform is linux
-sigalraab@c-009:~$ cd /home/dcor/nathansala/mdm-sandbox/
-sigalraab@c-009:/home/dcor/nathansala/mdm-sandbox$ find . -type l
-./dataset/HumanML3D
-./glove
-./models/best_sigal1/best.pt
-./models/best_sigal1/args.json
-./models/best_sigal2/best.pt
-./models/best_sigal2/args.json
-./models/best_sigal3/best.pt
-./models/best_sigal3/args.json
-./models/best_sigal4/best.pt
-./models/best_sigal4/args.json
-./models/best_sigal5/best.pt
-./models/best_sigal5/args.json
-./models/best_sigal6/best.pt
-./models/best_sigal6/args.json
-./models/best_sigal7/best.pt
-./models/best_sigal7/args.json
-./t2m
-./Motion
-./wandb/debug-internal.log
-./wandb/debug.log
-./wandb/latest-run
-sigalraab@c-009:/home/dcor/nathansala/mdm-sandbox$ cd ~/python/mdm-sandbox-nathan/
-sigalraab@c-009:~/python/mdm-sandbox-nathan$ pytest -s tests/generate_userstudy.py -k test_retarget_from_csv
-
-Command 'pytest' not found, but can be installed with:
-
-apt install python-pytest
-Please ask your administrator.
-
-sigalraab@c-009:~/python/mdm-sandbox-nathan$ conda activate python3p8_cuda11p7
-(python3p8_cuda11p7) sigalraab@c-009:~/python/mdm-sandbox-nathan$ pytest -s tests/generate_userstudy.py -k test_retarget_from_csv
-================================================================================================ test session starts =================================================================================================
-platform linux -- Python 3.8.15, pytest-8.2.0, pluggy-1.5.0
-rootdir: /home/dcor/sigalraab/python/mdm-sandbox-nathan
-collected 0 items / 1 error                                                                                                                                                                                          
-
-======================================================================================================= ERRORS =======================================================================================================
-____________________________________________________________________________________ ERROR collecting tests/generate_userstudy.py ____________________________________________________________________________________
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/python.py:487: in importtestmodule
-    mod = import_path(
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/pathlib.py:591: in import_path
-    importlib.import_module(module_name)
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/importlib/__init__.py:127: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-<frozen importlib._bootstrap>:1014: in _gcd_import
-    ???
-<frozen importlib._bootstrap>:991: in _find_and_load
-    ???
-<frozen importlib._bootstrap>:975: in _find_and_load_unlocked
-    ???
-<frozen importlib._bootstrap>:671: in _load_unlocked
-    ???
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/assertion/rewrite.py:169: in exec_module
-    source_stat, co = _rewrite_test(fn, self.config)
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/assertion/rewrite.py:349: in _rewrite_test
-    tree = ast.parse(source, filename=strfn)
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/ast.py:47: in parse
-    return compile(source, filename, mode, flags,
-E     File "<fstring>", line 1
-E       (len(tuples) tuples)
-E                    ^
-E   SyntaxError: invalid syntax
-============================================================================================== short test summary info ===============================================================================================
-ERROR tests/generate_userstudy.py
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-================================================================================================== 1 error in 0.23s ==================================================================================================
-(python3p8_cuda11p7) sigalraab@c-009:~/python/mdm-sandbox-nathan$ export PYTHONPATH="."
-(python3p8_cuda11p7) sigalraab@c-009:~/python/mdm-sandbox-nathan$ pytest -s tests/generate_userstudy.py -k test_retarget_from_csv
-================================================================================================ test session starts =================================================================================================
-platform linux -- Python 3.8.15, pytest-8.2.0, pluggy-1.5.0
-rootdir: /home/dcor/sigalraab/python/mdm-sandbox-nathan
-collected 0 items / 1 error                                                                                                                                                                                          
-
-======================================================================================================= ERRORS =======================================================================================================
-____________________________________________________________________________________ ERROR collecting tests/generate_userstudy.py ____________________________________________________________________________________
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/python.py:487: in importtestmodule
-    mod = import_path(
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/pathlib.py:591: in import_path
-    importlib.import_module(module_name)
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/importlib/__init__.py:127: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-<frozen importlib._bootstrap>:1014: in _gcd_import
-    ???
-<frozen importlib._bootstrap>:991: in _find_and_load
-    ???
-<frozen importlib._bootstrap>:975: in _find_and_load_unlocked
-    ???
-<frozen importlib._bootstrap>:671: in _load_unlocked
-    ???
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/assertion/rewrite.py:169: in exec_module
-    source_stat, co = _rewrite_test(fn, self.config)
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/assertion/rewrite.py:349: in _rewrite_test
-    tree = ast.parse(source, filename=strfn)
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/ast.py:47: in parse
-    return compile(source, filename, mode, flags,
-E     File "<fstring>", line 1
-E       (len(tuples) tuples)
-E                    ^
-E   SyntaxError: invalid syntax
-============================================================================================== short test summary info ===============================================================================================
-ERROR tests/generate_userstudy.py
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-================================================================================================== 1 error in 0.26s ==================================================================================================
-(python3p8_cuda11p7) sigalraab@c-009:~/python/mdm-sandbox-nathan$ ls .pytest_cache/
-CACHEDIR.TAG  .gitignore    README.md     v/            
-(python3p8_cuda11p7) sigalraab@c-009:~/python/mdm-sandbox-nathan$ pytest -s tests/generate_userstudy.py -k test_retarget_from_csv
-================================================================================================ test session starts =================================================================================================
-platform linux -- Python 3.8.15, pytest-8.2.0, pluggy-1.5.0
-rootdir: /home/dcor/sigalraab/python/mdm-sandbox-nathan
-collected 0 items / 1 error                                                                                                                                                                                          
-
-======================================================================================================= ERRORS =======================================================================================================
-____________________________________________________________________________________ ERROR collecting tests/generate_userstudy.py ____________________________________________________________________________________
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/python.py:487: in importtestmodule
-    mod = import_path(
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/pathlib.py:591: in import_path
-    importlib.import_module(module_name)
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/importlib/__init__.py:127: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-<frozen importlib._bootstrap>:1014: in _gcd_import
-    ???
-<frozen importlib._bootstrap>:991: in _find_and_load
-    ???
-<frozen importlib._bootstrap>:975: in _find_and_load_unlocked
-    ???
-<frozen importlib._bootstrap>:671: in _load_unlocked
-    ???
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/assertion/rewrite.py:169: in exec_module
-    source_stat, co = _rewrite_test(fn, self.config)
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/assertion/rewrite.py:349: in _rewrite_test
-    tree = ast.parse(source, filename=strfn)
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/ast.py:47: in parse
-    return compile(source, filename, mode, flags,
-E     File "<fstring>", line 1
-E       (len(tuples) tuples)
-E                    ^
-E   SyntaxError: invalid syntax
-============================================================================================== short test summary info ===============================================================================================
-ERROR tests/generate_userstudy.py
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-================================================================================================== 1 error in 0.20s ==================================================================================================
-(python3p8_cuda11p7) sigalraab@c-009:~/python/mdm-sandbox-nathan$ grep test_retarget_from_csv tests/*py
-tests/generate_userstudy.py:def test_retarget_from_csv(mdm, diffusion, us_examples, invert, scale):
-tests/test_inverse_dataset.py:def test_retarget_from_csv(mdm, diffusion, us_examples, invert, scale):
-(python3p8_cuda11p7) sigalraab@c-009:~/python/mdm-sandbox-nathan$ pytest -s tests/generate_userstudy.py -k test_retarget_from_csv
-================================================================================================ test session starts =================================================================================================
-platform linux -- Python 3.8.15, pytest-8.2.0, pluggy-1.5.0
-rootdir: /home/dcor/sigalraab/python/mdm-sandbox-nathan
-collected 4 items / 3 deselected / 1 selected                                                                                                                                                                        
-
-tests/generate_userstudy.py TRANS_DEC init
-EMBED TEXT
-Loading BERT...
-Loading CLIP too...
-^C
-
-================================================================================================== warnings summary ==================================================================================================
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/torchvision/io/image.py:13
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/torchvision/image.so: undefined symbol: _ZN5torch3jit17parseSchemaOrNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
-    warn(f"Failed to load image Python extension: {e}")
-
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/scipy/__init__.py:146
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.23.4
-    warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
-
--- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! KeyboardInterrupt !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/os.py:223: KeyboardInterrupt
-(to show a full traceback on KeyboardInterrupt use --full-trace)
-========================================================================================= 3 deselected, 2 warnings in 13.23s =========================================================================================
-(python3p8_cuda11p7) sigalraab@c-009:~/python/mdm-sandbox-nathan$ pytest -s tests/generate_userstudy.py -k test_retarget_from_csv
-================================================================================================ test session starts =================================================================================================
-platform linux -- Python 3.8.15, pytest-8.2.0, pluggy-1.5.0
-rootdir: /home/dcor/sigalraab/python/mdm-sandbox-nathan
-collected 4 items / 3 deselected / 1 selected                                                                                                                                                                        
-
-tests/generate_userstudy.py TRANS_DEC init
-EMBED TEXT
-Loading BERT...
-Loading CLIP too...
-Loading checkpoints from models/best_sigal1/best.pt...
-F
-
-====================================================================================================== FAILURES ======================================================================================================
-___________________________________________________________________________________________ test_retarget_from_csv[1-True] ___________________________________________________________________________________________
-
-mdm = MDM(
-  (input_process): InputProcess(
-    (poseEmbedding): Linear(in_features=263, out_features=512, bias=True)
-  )
-  ...as=True)
-  (output_process): OutputProcess(
-    (poseFinal): Linear(in_features=512, out_features=263, bias=True)
-  )
-)
-diffusion = <diffusion.respace.SpacedDiffusion object at 0x7f10e02fe700>
-us_examples = [('006473', '013122'), ('006473', '005037'), ('006473', '005037'), ('006473', '000847'), ('006473', '010547'), ('006473', '000710'), ...], invert = True, scale = 1
-
-    @pytest.mark.parametrize("invert", [True])
-    @pytest.mark.parametrize("scale", [1])
-    # @pytest.mark.parametrize("method", ['momo', 'inpaint', 'knn'])
-    # @pytest.mark.parametrize("method", ['knn'])
-    def test_retarget_from_csv(mdm, diffusion, us_examples, invert, scale):
-        if scale > 1 :
-            mdm = ClassifierFreeSampleModel(mdm)
+  <body>
+    <div id="header">
+      <div id="logo">
+	<h1>
+		<center>
+	    	 <span style="font-size:50%;color:#777;font-weight:normal">The first Workshop on</span><br>
+             Human Motion Generation (HuMoGen)
+             
+		</center>
+	</h1><br>
+  <div class="my-image-box-header">
+   <center><img src="./data/humogen_logo.png" alt="humogen_logo" height="190">
+    <!-- <img src="data/Adobe_Corporate_logo.svg.png" width="320" height="83">  -->
+  </center>
     
-        # print('tupples are:', us_exapmples)
-        # print(f'there are {len(tuples) tuples}')
-        os.makedirs(SAVE_DIR, exist_ok=True)
->       import ipdb; pdb.set_trace()
-E       ModuleNotFoundError: No module named 'ipdb'
-
-tests/generate_userstudy.py:314: ModuleNotFoundError
-================================================================================================== warnings summary ==================================================================================================
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/torchvision/io/image.py:13
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/torchvision/image.so: undefined symbol: _ZN5torch3jit17parseSchemaOrNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
-    warn(f"Failed to load image Python extension: {e}")
-
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/scipy/__init__.py:146
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.23.4
-    warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/ch.py:1203: DeprecationWarning: inspect.getargspec() is deprecated since Python 3.0, use inspect.signature() or inspect.getfullargspec()
-    want_out = 'out' in inspect.getargspec(func).args
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.complex` is a deprecated alias for the builtin `complex`. To silence this warning, use `complex` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.complex128` here.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.object` is a deprecated alias for the builtin `object`. To silence this warning, use `object` by itself. Doing this will not modify any behavior and is safe. 
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.unicode` is a deprecated alias for `np.compat.unicode`. To silence this warning, use `np.compat.unicode` by itself. In the likely event your code does not need to work on Python 2 you can use the builtin `str` for which `np.compat.unicode` is itself an alias. Doing this will not modify any behaviour and is safe. If you specifically wanted the numpy scalar type, use `np.str_` here.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.str` is a deprecated alias for the builtin `str`. To silence this warning, use `str` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.str_` here.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
--- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-============================================================================================== short test summary info ===============================================================================================
-FAILED tests/generate_userstudy.py::test_retarget_from_csv[1-True] - ModuleNotFoundError: No module named 'ipdb'
-=================================================================================== 1 failed, 3 deselected, 17 warnings in 11.51s ====================================================================================
-(python3p8_cuda11p7) sigalraab@c-009:~/python/mdm-sandbox-nathan$ pytest -s tests/generate_userstudy.py -k test_retarget_from_csv
-================================================================================================ test session starts =================================================================================================
-platform linux -- Python 3.8.15, pytest-8.2.0, pluggy-1.5.0
-rootdir: /home/dcor/sigalraab/python/mdm-sandbox-nathan
-collected 4 items / 3 deselected / 1 selected                                                                                                                                                                        
-
-tests/generate_userstudy.py TRANS_DEC init
-EMBED TEXT
-Loading BERT...
-Loading CLIP too...
-Loading checkpoints from models/best_sigal1/best.pt...
-
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> PDB set_trace >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-> /home/dcor/sigalraab/python/mdm-sandbox-nathan/tests/generate_userstudy.py(315)test_retarget_from_csv()
--> os.makedirs(SAVE_DIR / 'momo', exist_ok=True)
-(Pdb) print('tupples are:', us_exapmples)
-*** NameError: name 'us_exapmples' is not defined
-(Pdb) print('tupples are:', us_exaples)
-*** NameError: name 'us_exaples' is not defined
-(Pdb) print('tupples are:', us_examples)
-tupples are: [('006473', '013122'), ('006473', '005037'), ('006473', '005037'), ('006473', '000847'), ('006473', '010547'), ('006473', '000710'), ('006473', '009102'), ('004489', '013122'), ('004489', '005037'), ('004489', '005037'), ('004489', '000847'), ('004489', '010547'), ('004489', '000710'), ('004489', '009102')]
-(Pdb) print(f'there are {len(tuples) tuples}')
-*** SyntaxError: invalid syntax
-(Pdb) print(f'there are {len(tuples)}')
-*** NameError: name 'tuples' is not defined
-(Pdb) print(f'there are {len(us_examples)}')
-there are 14
-(Pdb) --KeyboardInterrupt--
-(Pdb) --KeyboardInterrupt--
-(Pdb) --KeyboardInterrupt--
-(Pdb) --KeyboardInterrupt--
-(Pdb) exit
-
-
-================================================================================================== warnings summary ==================================================================================================
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/torchvision/io/image.py:13
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/torchvision/image.so: undefined symbol: _ZN5torch3jit17parseSchemaOrNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
-    warn(f"Failed to load image Python extension: {e}")
-
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/scipy/__init__.py:146
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.23.4
-    warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/ch.py:1203: DeprecationWarning: inspect.getargspec() is deprecated since Python 3.0, use inspect.signature() or inspect.getfullargspec()
-    want_out = 'out' in inspect.getargspec(func).args
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.complex` is a deprecated alias for the builtin `complex`. To silence this warning, use `complex` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.complex128` here.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.object` is a deprecated alias for the builtin `object`. To silence this warning, use `object` by itself. Doing this will not modify any behavior and is safe. 
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.unicode` is a deprecated alias for `np.compat.unicode`. To silence this warning, use `np.compat.unicode` by itself. In the likely event your code does not need to work on Python 2 you can use the builtin `str` for which `np.compat.unicode` is itself an alias. Doing this will not modify any behaviour and is safe. If you specifically wanted the numpy scalar type, use `np.str_` here.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.str` is a deprecated alias for the builtin `str`. To silence this warning, use `str` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.str_` here.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
--- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! _pytest.outcomes.Exit: Quitting debugger !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-=================================================================================== 3 deselected, 17 warnings in 132.07s (0:02:12) ===================================================================================
-(python3p8_cuda11p7) sigalraab@c-009:~/python/mdm-sandbox-nathan$ 
-(python3p8_cuda11p7) sigalraab@c-009:~/python/mdm-sandbox-nathan$ 
-(python3p8_cuda11p7) sigalraab@c-009:~/python/mdm-sandbox-nathan$ 
-(python3p8_cuda11p7) sigalraab@c-009:~/python/mdm-sandbox-nathan$ pytest -s tests/generate_userstudy.py -k test_retarget_from_csv
-================================================================================================ test session starts =================================================================================================
-platform linux -- Python 3.8.15, pytest-8.2.0, pluggy-1.5.0
-rootdir: /home/dcor/sigalraab/python/mdm-sandbox-nathan
-collected 4 items / 3 deselected / 1 selected                                                                                                                                                                        
-
-tests/generate_userstudy.py TRANS_DEC init
-EMBED TEXT
-Loading BERT...
-Loading CLIP too...
-Loading checkpoints from models/best_sigal1/best.pt...
-there are 14
-
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> PDB set_trace >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-> /home/dcor/sigalraab/python/mdm-sandbox-nathan/tests/generate_userstudy.py(315)test_retarget_from_csv()
--> os.makedirs(SAVE_DIR / 'momo', exist_ok=True)
-(Pdb) exit
-
-
-================================================================================================== warnings summary ==================================================================================================
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/torchvision/io/image.py:13
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/torchvision/image.so: undefined symbol: _ZN5torch3jit17parseSchemaOrNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
-    warn(f"Failed to load image Python extension: {e}")
-
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/scipy/__init__.py:146
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.23.4
-    warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/ch.py:1203: DeprecationWarning: inspect.getargspec() is deprecated since Python 3.0, use inspect.signature() or inspect.getfullargspec()
-    want_out = 'out' in inspect.getargspec(func).args
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.complex` is a deprecated alias for the builtin `complex`. To silence this warning, use `complex` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.complex128` here.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.object` is a deprecated alias for the builtin `object`. To silence this warning, use `object` by itself. Doing this will not modify any behavior and is safe. 
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.unicode` is a deprecated alias for `np.compat.unicode`. To silence this warning, use `np.compat.unicode` by itself. In the likely event your code does not need to work on Python 2 you can use the builtin `str` for which `np.compat.unicode` is itself an alias. Doing this will not modify any behaviour and is safe. If you specifically wanted the numpy scalar type, use `np.str_` here.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.str` is a deprecated alias for the builtin `str`. To silence this warning, use `str` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.str_` here.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
--- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! _pytest.outcomes.Exit: Quitting debugger !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-======================================================================================== 3 deselected, 17 warnings in 54.55s =========================================================================================
-(python3p8_cuda11p7) sigalraab@c-009:~/python/mdm-sandbox-nathan$ rm -r tests/sigal
-(python3p8_cuda11p7) sigalraab@c-009:~/python/mdm-sandbox-nathan$ pytest -s tests/generate_userstudy.py -k test_retarget_from_csv
-================================================================================================ test session starts =================================================================================================
-platform linux -- Python 3.8.15, pytest-8.2.0, pluggy-1.5.0
-rootdir: /home/dcor/sigalraab/python/mdm-sandbox-nathan
-collected 4 items / 3 deselected / 1 selected                                                                                                                                                                        
-
-tests/generate_userstudy.py TRANS_DEC init
-EMBED TEXT
-Loading BERT...
-Loading CLIP too...
-Loading checkpoints from models/best_sigal1/best.pt...
-tupples are: [('006473', '013122'), ('006473', '005037'), ('006473', '005037'), ('006473', '000847'), ('006473', '010547'), ('006473', '000710'), ('006473', '009102'), ('004489', '013122'), ('004489', '005037'), ('004489', '005037'), ('004489', '000847'), ('004489', '010547'), ('004489', '000710'), ('004489', '009102')]
-there are 14
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 38.32it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:03<00:00, 30.06it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 38.84it/s]
-saving tests/sigal/user_study_seed13/momo/0-lead-006473_fol-013122_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13/inpaint/0-lead-006473_fol-013122_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13/knn/0-lead-006473_fol-013122_c-1_i-True.mp4
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 38.52it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:03<00:00, 30.90it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 39.20it/s]
-saving tests/sigal/user_study_seed13/momo/1-lead-006473_fol-005037_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13/inpaint/1-lead-006473_fol-005037_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13/knn/1-lead-006473_fol-005037_c-1_i-True.mp4
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 38.13it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:03<00:00, 30.01it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 38.66it/s]
-saving tests/sigal/user_study_seed13/momo/2-lead-006473_fol-005037_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13/inpaint/2-lead-006473_fol-005037_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13/knn/2-lead-006473_fol-005037_c-1_i-True.mp4
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 38.45it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:03<00:00, 30.55it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 39.02it/s]
-saving tests/sigal/user_study_seed13/momo/3-lead-006473_fol-000847_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13/inpaint/3-lead-006473_fol-000847_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13/knn/3-lead-006473_fol-000847_c-1_i-True.mp4
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 39.04it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:03<00:00, 31.13it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 39.70it/s]
-saving tests/sigal/user_study_seed13/momo/4-lead-006473_fol-010547_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13/inpaint/4-lead-006473_fol-010547_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13/knn/4-lead-006473_fol-010547_c-1_i-True.mp4
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 38.95it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:03<00:00, 31.07it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 39.51it/s]
-saving tests/sigal/user_study_seed13/momo/5-lead-006473_fol-000710_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13/inpaint/5-lead-006473_fol-000710_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13/knn/5-lead-006473_fol-000710_c-1_i-True.mp4
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 38.90it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:03<00:00, 31.09it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 39.51it/s]
-saving tests/sigal/user_study_seed13/momo/6-lead-006473_fol-009102_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13/inpaint/6-lead-006473_fol-009102_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13/knn/6-lead-006473_fol-009102_c-1_i-True.mp4
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 39.03it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:03<00:00, 31.05it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 39.47it/s]
-saving tests/sigal/user_study_seed13/momo/7-lead-004489_fol-013122_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13/inpaint/7-lead-004489_fol-013122_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13/knn/7-lead-004489_fol-013122_c-1_i-True.mp4
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 38.95it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:03<00:00, 31.13it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 39.62it/s]
-saving tests/sigal/user_study_seed13/momo/8-lead-004489_fol-005037_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13/inpaint/8-lead-004489_fol-005037_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13/knn/8-lead-004489_fol-005037_c-1_i-True.mp4
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 38.95it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:03<00:00, 31.14it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 39.71it/s]
-saving tests/sigal/user_study_seed13/momo/9-lead-004489_fol-005037_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13/inpaint/9-lead-004489_fol-005037_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13/knn/9-lead-004489_fol-005037_c-1_i-True.mp4
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 38.51it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:03<00:00, 30.86it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 38.67it/s]
-saving tests/sigal/user_study_seed13/momo/10-lead-004489_fol-000847_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13/inpaint/10-lead-004489_fol-000847_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13/knn/10-lead-004489_fol-000847_c-1_i-True.mp4
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 38.26it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:03<00:00, 30.38it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 38.59it/s]
-saving tests/sigal/user_study_seed13/momo/11-lead-004489_fol-010547_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13/inpaint/11-lead-004489_fol-010547_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13/knn/11-lead-004489_fol-010547_c-1_i-True.mp4
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 38.98it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:03<00:00, 31.01it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 39.54it/s]
-saving tests/sigal/user_study_seed13/momo/12-lead-004489_fol-000710_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13/inpaint/12-lead-004489_fol-000710_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13/knn/12-lead-004489_fol-000710_c-1_i-True.mp4
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 38.89it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:03<00:00, 31.05it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 39.48it/s]
-saving tests/sigal/user_study_seed13/momo/13-lead-004489_fol-009102_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13/inpaint/13-lead-004489_fol-009102_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13/knn/13-lead-004489_fol-009102_c-1_i-True.mp4
-Saving file tests/sigal/user_study_seed13/momo_motions.npy...
-Saving file tests/sigal/user_study_seed13/inpaint_motions.npy...
-Saving file tests/sigal/user_study_seed13/knn_motions.npy...
-.
-
-================================================================================================== warnings summary ==================================================================================================
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/torchvision/io/image.py:13
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/torchvision/image.so: undefined symbol: _ZN5torch3jit17parseSchemaOrNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
-    warn(f"Failed to load image Python extension: {e}")
-
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/scipy/__init__.py:146
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.23.4
-    warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/ch.py:1203: DeprecationWarning: inspect.getargspec() is deprecated since Python 3.0, use inspect.signature() or inspect.getfullargspec()
-    want_out = 'out' in inspect.getargspec(func).args
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.complex` is a deprecated alias for the builtin `complex`. To silence this warning, use `complex` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.complex128` here.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.object` is a deprecated alias for the builtin `object`. To silence this warning, use `object` by itself. Doing this will not modify any behavior and is safe. 
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.unicode` is a deprecated alias for `np.compat.unicode`. To silence this warning, use `np.compat.unicode` by itself. In the likely event your code does not need to work on Python 2 you can use the builtin `str` for which `np.compat.unicode` is itself an alias. Doing this will not modify any behaviour and is safe. If you specifically wanted the numpy scalar type, use `np.str_` here.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.str` is a deprecated alias for the builtin `str`. To silence this warning, use `str` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.str_` here.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py: 126 warnings
-  /home/dcor/sigalraab/python/mdm-sandbox-nathan/data_loaders/humanml/utils/plot_script.py:73: MatplotlibDeprecationWarning: Axes3D(fig) adding itself to the figure is deprecated since 3.4. Pass the keyword argument auto_add_to_figure=False and use fig.add_axes(ax) to suppress this warning. The default value of auto_add_to_figure will change to False in mpl3.5 and True values will no longer work in 3.6.  This is consistent with other Axes classes.
-    ax = p3.Axes3D(fig)
-
-tests/generate_userstudy.py: 126 warnings
-  /home/dcor/sigalraab/python/mdm-sandbox-nathan/data_loaders/humanml/utils/plot_script.py:46: MatplotlibDeprecationWarning: The 'b' parameter of grid() has been renamed 'visible' since Matplotlib 3.5; support for the old name will be dropped two minor releases later.
-    ax.grid(b=False)
-
--- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-============================================================================= 1 passed, 3 deselected, 269 warnings in 700.54s (0:11:40) ==============================================================================
-(python3p8_cuda11p7) sigalraab@c-009:~/python/mdm-sandbox-nathan$ pytest -s tests/generate_userstudy.py -k test_retarget_from_csv
-================================================================================================ test session starts =================================================================================================
-platform linux -- Python 3.8.15, pytest-8.2.0, pluggy-1.5.0
-rootdir: /home/dcor/sigalraab/python/mdm-sandbox-nathan
-collected 4 items / 3 deselected / 1 selected                                                                                                                                                                        
-
-tests/generate_userstudy.py TRANS_DEC init
-EMBED TEXT
-Loading BERT...
-Loading CLIP too...
-Loading checkpoints from models/best_sigal1/best.pt...
-tupples are: [['006473', '013122'], ['006473', '005037'], ['006473', '005037'], ['006473', '000847'], ['006473', '010547'], ['006473', '000710'], ['006473', '009102'], ['001048', '013122'], ['001048', '005037'], ['001048', '005037'], ['001048', '000847'], ['001048', '010547'], ['001048', '000710'], ['001048', '009102']]
-there are 14
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 38.93it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:03<00:00, 31.18it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 39.94it/s]
-saving tests/sigal/user_study_seed13_b/momo/0-lead-006473_fol-013122_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13_b/inpaint/0-lead-006473_fol-013122_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13_b/knn/0-lead-006473_fol-013122_c-1_i-True.mp4
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 39.37it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:03<00:00, 31.27it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 39.97it/s]
-saving tests/sigal/user_study_seed13_b/momo/1-lead-006473_fol-005037_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13_b/inpaint/1-lead-006473_fol-005037_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13_b/knn/1-lead-006473_fol-005037_c-1_i-True.mp4
-^C^C
-
-================================================================================================== warnings summary ==================================================================================================
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/torchvision/io/image.py:13
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/torchvision/image.so: undefined symbol: _ZN5torch3jit17parseSchemaOrNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
-    warn(f"Failed to load image Python extension: {e}")
-
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/scipy/__init__.py:146
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.23.4
-    warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/ch.py:1203: DeprecationWarning: inspect.getargspec() is deprecated since Python 3.0, use inspect.signature() or inspect.getfullargspec()
-    want_out = 'out' in inspect.getargspec(func).args
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.complex` is a deprecated alias for the builtin `complex`. To silence this warning, use `complex` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.complex128` here.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.object` is a deprecated alias for the builtin `object`. To silence this warning, use `object` by itself. Doing this will not modify any behavior and is safe. 
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.unicode` is a deprecated alias for `np.compat.unicode`. To silence this warning, use `np.compat.unicode` by itself. In the likely event your code does not need to work on Python 2 you can use the builtin `str` for which `np.compat.unicode` is itself an alias. Doing this will not modify any behaviour and is safe. If you specifically wanted the numpy scalar type, use `np.str_` here.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.str` is a deprecated alias for the builtin `str`. To silence this warning, use `str` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.str_` here.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py: 18 warnings
-  /home/dcor/sigalraab/python/mdm-sandbox-nathan/data_loaders/humanml/utils/plot_script.py:73: MatplotlibDeprecationWarning: Axes3D(fig) adding itself to the figure is deprecated since 3.4. Pass the keyword argument auto_add_to_figure=False and use fig.add_axes(ax) to suppress this warning. The default value of auto_add_to_figure will change to False in mpl3.5 and True values will no longer work in 3.6.  This is consistent with other Axes classes.
-    ax = p3.Axes3D(fig)
-
-tests/generate_userstudy.py: 18 warnings
-  /home/dcor/sigalraab/python/mdm-sandbox-nathan/data_loaders/humanml/utils/plot_script.py:46: MatplotlibDeprecationWarning: The 'b' parameter of grid() has been renamed 'visible' since Matplotlib 3.5; support for the old name will be dropped two minor releases later.
-    ax.grid(b=False)
-
--- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-=================================================================================== 3 deselected, 53 warnings in 108.16s (0:01:48) ===================================================================================
-Traceback (most recent call last):
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/main.py", line 285, in wrap_session
-    session.exitstatus = doit(config, session) or 0
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/main.py", line 339, in _main
-    config.hook.pytest_runtestloop(session=session)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_hooks.py", line 513, in __call__
-    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_manager.py", line 120, in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_callers.py", line 139, in _multicall
-    raise exception.with_traceback(exception.__traceback__)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_callers.py", line 122, in _multicall
-    teardown.throw(exception)  # type: ignore[union-attr]
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/logging.py", line 807, in pytest_runtestloop
-    return (yield)  # Run all the tests.
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_callers.py", line 103, in _multicall
-    res = hook_impl.function(*args)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/main.py", line 364, in pytest_runtestloop
-    item.config.hook.pytest_runtest_protocol(item=item, nextitem=nextitem)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_hooks.py", line 513, in __call__
-    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_manager.py", line 120, in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_callers.py", line 139, in _multicall
-    raise exception.with_traceback(exception.__traceback__)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_callers.py", line 122, in _multicall
-    teardown.throw(exception)  # type: ignore[union-attr]
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/warnings.py", line 111, in pytest_runtest_protocol
-    return (yield)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_callers.py", line 122, in _multicall
-    teardown.throw(exception)  # type: ignore[union-attr]
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/assertion/__init__.py", line 176, in pytest_runtest_protocol
-    return (yield)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_callers.py", line 122, in _multicall
-    teardown.throw(exception)  # type: ignore[union-attr]
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/unittest.py", line 421, in pytest_runtest_protocol
-    res = yield
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_callers.py", line 122, in _multicall
-    teardown.throw(exception)  # type: ignore[union-attr]
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/faulthandler.py", line 85, in pytest_runtest_protocol
-    return (yield)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_callers.py", line 103, in _multicall
-    res = hook_impl.function(*args)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/runner.py", line 116, in pytest_runtest_protocol
-    runtestprotocol(item, nextitem=nextitem)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/runner.py", line 135, in runtestprotocol
-    reports.append(call_and_report(item, "call", log))
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/runner.py", line 240, in call_and_report
-    call = CallInfo.from_call(
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/runner.py", line 341, in from_call
-    result: Optional[TResult] = func()
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/runner.py", line 241, in <lambda>
-    lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_hooks.py", line 513, in __call__
-    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_manager.py", line 120, in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_callers.py", line 139, in _multicall
-    raise exception.with_traceback(exception.__traceback__)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_callers.py", line 122, in _multicall
-    teardown.throw(exception)  # type: ignore[union-attr]
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/threadexception.py", line 87, in pytest_runtest_call
-    yield from thread_exception_runtest_hook()
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/threadexception.py", line 63, in thread_exception_runtest_hook
-    yield
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_callers.py", line 122, in _multicall
-    teardown.throw(exception)  # type: ignore[union-attr]
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/unraisableexception.py", line 90, in pytest_runtest_call
-    yield from unraisable_exception_runtest_hook()
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/unraisableexception.py", line 65, in unraisable_exception_runtest_hook
-    yield
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_callers.py", line 122, in _multicall
-    teardown.throw(exception)  # type: ignore[union-attr]
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/logging.py", line 850, in pytest_runtest_call
-    yield from self._runtest_for(item, "call")
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/logging.py", line 833, in _runtest_for
-    yield
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_callers.py", line 122, in _multicall
-    teardown.throw(exception)  # type: ignore[union-attr]
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/capture.py", line 878, in pytest_runtest_call
-    return (yield)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_callers.py", line 122, in _multicall
-    teardown.throw(exception)  # type: ignore[union-attr]
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/skipping.py", line 257, in pytest_runtest_call
-    return (yield)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_callers.py", line 103, in _multicall
-    res = hook_impl.function(*args)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/runner.py", line 173, in pytest_runtest_call
-    item.runtest()
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/python.py", line 1627, in runtest
-    self.ihook.pytest_pyfunc_call(pyfuncitem=self)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_hooks.py", line 513, in __call__
-    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_manager.py", line 120, in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_callers.py", line 139, in _multicall
-    raise exception.with_traceback(exception.__traceback__)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_callers.py", line 103, in _multicall
-    res = hook_impl.function(*args)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/python.py", line 162, in pytest_pyfunc_call
-    result = testfunction(**testargs)
-  File "/home/dcor/sigalraab/python/mdm-sandbox-nathan/tests/generate_userstudy.py", line 362, in test_retarget_from_csv
-    save_3motion(motion, prompts + ('',), motion_name=prefix)
-  File "/home/dcor/sigalraab/python/mdm-sandbox-nathan/tests/generate_userstudy.py", line 244, in save_3motion
-    save_multiple_samples(artifact_path, None, animations, FPS, motion_len, n_rows_in_out_file=7)
-  File "/home/dcor/sigalraab/python/mdm-sandbox-nathan/data_loaders/humanml/utils/plot_script.py", line 403, in save_multiple_samples
-    clips.write_videofile(all_sample_save_path, fps=fps, threads=4, logger=None)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/decorator.py", line 232, in fun
-    return caller(func, *(extras + args), **kw)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/moviepy/decorators.py", line 54, in requires_duration
-    return f(clip, *a, **k)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/decorator.py", line 232, in fun
-    return caller(func, *(extras + args), **kw)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/moviepy/decorators.py", line 125, in use_clip_fps_by_default
-    return f(clip, *new_a, **new_kw)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/decorator.py", line 232, in fun
-    return caller(func, *(extras + args), **kw)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/moviepy/decorators.py", line 22, in convert_masks_to_RGB
-    return f(clip, *a, **k)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/moviepy/video/VideoClip.py", line 300, in write_videofile
-    ffmpeg_write_video(self, filename, fps, codec,
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/moviepy/video/io/ffmpeg_writer.py", line 220, in ffmpeg_write_video
-    for t,frame in clip.iter_frames(logger=logger, with_times=True,
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/moviepy/Clip.py", line 472, in iter_frames
-    frame = self.get_frame(t)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/decorator.py", line 232, in fun
-    return caller(func, *(extras + args), **kw)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/moviepy/decorators.py", line 84, in wrapper
-    return f(*new_a, **new_kw)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/moviepy/Clip.py", line 93, in get_frame
-    return self.make_frame(t)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/moviepy/video/compositing/CompositeVideoClip.py", line 111, in make_frame
-    f = c.blit_on(f, t)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/moviepy/video/VideoClip.py", line 527, in blit_on
-    img = self.get_frame(ct)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/decorator.py", line 232, in fun
-    return caller(func, *(extras + args), **kw)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/moviepy/decorators.py", line 84, in wrapper
-    return f(*new_a, **new_kw)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/moviepy/Clip.py", line 93, in get_frame
-    return self.make_frame(t)
-  File "/home/dcor/sigalraab/python/mdm-sandbox-nathan/data_loaders/humanml/utils/plot_script.py", line 102, in update
-    ax.clear()
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/matplotlib/axes/_base.py", line 1480, in clear
-    self.cla()
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/mpl_toolkits/mplot3d/axes3d.py", line 1131, in cla
-    super().cla()
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/matplotlib/axes/_base.py", line 1210, in cla
-    self.set_xlim(0, 1)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/matplotlib/cbook/__init__.py", line 1812, in method
-    return getattr(self, name)(*args, **kwargs)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/mpl_toolkits/mplot3d/axes3d.py", line 749, in set_xlim3d
-    self._process_unit_info([("x", (left, right))], convert=False)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/matplotlib/axes/_base.py", line 2526, in _process_unit_info
-    axis.update_units(data)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/matplotlib/axis.py", line 1443, in update_units
-    converter = munits.registry.get_converter(data)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/matplotlib/units.py", line 207, in get_converter
-    return self.get_converter(first)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/matplotlib/units.py", line 184, in get_converter
-    x = cbook._unpack_to_numpy(x)
-KeyboardInterrupt
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/bin/pytest", line 8, in <module>
-    sys.exit(console_main())
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/config/__init__.py", line 206, in console_main
-    code = main()
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/config/__init__.py", line 178, in main
-    ret: Union[ExitCode, int] = config.hook.pytest_cmdline_main(
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_hooks.py", line 513, in __call__
-    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_manager.py", line 120, in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_callers.py", line 139, in _multicall
-    raise exception.with_traceback(exception.__traceback__)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_callers.py", line 103, in _multicall
-    res = hook_impl.function(*args)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/main.py", line 332, in pytest_cmdline_main
-    return wrap_session(config, _main)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/main.py", line 299, in wrap_session
-    config.hook.pytest_keyboard_interrupt(excinfo=excinfo)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_hooks.py", line 513, in __call__
-    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_manager.py", line 120, in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_callers.py", line 139, in _multicall
-    raise exception.with_traceback(exception.__traceback__)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/pluggy/_callers.py", line 103, in _multicall
-    res = hook_impl.function(*args)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/terminal.py", line 906, in pytest_keyboard_interrupt
-    self._keyboardinterrupt_memo = excinfo.getrepr(funcargs=True)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/_code/code.py", line 697, in getrepr
-    return fmt.repr_excinfo(self)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/_code/code.py", line 1064, in repr_excinfo
-    reprtraceback = self.repr_traceback(excinfo_)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/_code/code.py", line 993, in repr_traceback
-    entries = [
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/_code/code.py", line 994, in <listcomp>
-    self.repr_traceback_entry(entry, excinfo if last == entry else None)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/_code/code.py", line 932, in repr_traceback_entry
-    source = self._getentrysource(entry)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/_code/code.py", line 834, in _getentrysource
-    source = entry.getsource(self.astcache)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/_code/code.py", line 251, in getsource
-    source = self.frame.code.fullsource
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/_code/code.py", line 107, in fullsource
-    full, _ = findsource(self.raw)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/_pytest/_code/source.py", line 120, in findsource
-    sourcelines, lineno = inspect.findsource(obj)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/inspect.py", line 792, in findsource
-    module = getmodule(object, file)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/inspect.py", line 754, in getmodule
-    os.path.realpath(f)] = module.__name__
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/posixpath.py", line 391, in realpath
-    path, ok = _joinrealpath(filename[:0], filename, {})
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/posixpath.py", line 424, in _joinrealpath
-    newpath = join(path, name)
-  File "/home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/posixpath.py", line 71, in join
-    def join(a, *p):
-KeyboardInterrupt
-^C
-(python3p8_cuda11p7) sigalraab@c-009:~/python/mdm-sandbox-nathan$ pytest -s tests/generate_userstudy.py -k test_retarget_from_csv
-================================================================================================ test session starts =================================================================================================
-platform linux -- Python 3.8.15, pytest-8.2.0, pluggy-1.5.0
-rootdir: /home/dcor/sigalraab/python/mdm-sandbox-nathan
-collected 4 items / 3 deselected / 1 selected                                                                                                                                                                        
-
-tests/generate_userstudy.py TRANS_DEC init
-EMBED TEXT
-Loading BERT...
-Loading CLIP too...
-Loading checkpoints from models/best_sigal1/best.pt...
-tupples are: [['006473', '013122'], ['006473', '005037'], ['006473', '000847'], ['006473', '010547'], ['006473', '000710'], ['006473', '009102'], ['001048', '013122'], ['001048', '005037'], ['001048', '000847'], ['001048', '010547'], ['001048', '000710'], ['001048', '009102']]
-there are 12
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 39.49it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:03<00:00, 31.79it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 40.41it/s]
-saving tests/sigal/user_study_seed13_b/momo/0-lead-006473_fol-013122_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13_b/inpaint/0-lead-006473_fol-013122_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13_b/knn/0-lead-006473_fol-013122_c-1_i-True.mp4
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 39.75it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:03<00:00, 31.78it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 40.44it/s]
-saving tests/sigal/user_study_seed13_b/momo/1-lead-006473_fol-005037_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13_b/inpaint/1-lead-006473_fol-005037_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13_b/knn/1-lead-006473_fol-005037_c-1_i-True.mp4
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 39.86it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:03<00:00, 31.77it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 40.55it/s]
-saving tests/sigal/user_study_seed13_b/momo/2-lead-006473_fol-000847_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13_b/inpaint/2-lead-006473_fol-000847_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13_b/knn/2-lead-006473_fol-000847_c-1_i-True.mp4
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 39.75it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:03<00:00, 31.68it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 40.35it/s]
-saving tests/sigal/user_study_seed13_b/momo/3-lead-006473_fol-010547_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13_b/inpaint/3-lead-006473_fol-010547_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13_b/knn/3-lead-006473_fol-010547_c-1_i-True.mp4
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 39.78it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:03<00:00, 31.82it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 40.52it/s]
-saving tests/sigal/user_study_seed13_b/momo/4-lead-006473_fol-000710_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13_b/inpaint/4-lead-006473_fol-000710_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13_b/knn/4-lead-006473_fol-000710_c-1_i-True.mp4
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 39.71it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:03<00:00, 31.75it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 40.35it/s]
-saving tests/sigal/user_study_seed13_b/momo/5-lead-006473_fol-009102_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13_b/inpaint/5-lead-006473_fol-009102_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13_b/knn/5-lead-006473_fol-009102_c-1_i-True.mp4
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 39.63it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:03<00:00, 31.53it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 40.24it/s]
-saving tests/sigal/user_study_seed13_b/momo/6-lead-001048_fol-013122_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13_b/inpaint/6-lead-001048_fol-013122_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13_b/knn/6-lead-001048_fol-013122_c-1_i-True.mp4
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 39.73it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:03<00:00, 31.70it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 40.42it/s]
-saving tests/sigal/user_study_seed13_b/momo/7-lead-001048_fol-005037_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13_b/inpaint/7-lead-001048_fol-005037_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13_b/knn/7-lead-001048_fol-005037_c-1_i-True.mp4
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 39.03it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:03<00:00, 31.10it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 40.01it/s]
-saving tests/sigal/user_study_seed13_b/momo/8-lead-001048_fol-000847_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13_b/inpaint/8-lead-001048_fol-000847_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13_b/knn/8-lead-001048_fol-000847_c-1_i-True.mp4
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 39.30it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:03<00:00, 31.13it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 40.17it/s]
-saving tests/sigal/user_study_seed13_b/momo/9-lead-001048_fol-010547_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13_b/inpaint/9-lead-001048_fol-010547_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13_b/knn/9-lead-001048_fol-010547_c-1_i-True.mp4
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 39.52it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:03<00:00, 31.56it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 40.36it/s]
-saving tests/sigal/user_study_seed13_b/momo/10-lead-001048_fol-000710_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13_b/inpaint/10-lead-001048_fol-000710_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13_b/knn/10-lead-001048_fol-000710_c-1_i-True.mp4
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 39.79it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:03<00:00, 31.67it/s]
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:02<00:00, 40.24it/s]
-saving tests/sigal/user_study_seed13_b/momo/11-lead-001048_fol-009102_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13_b/inpaint/11-lead-001048_fol-009102_c-1_i-True.mp4
-saving tests/sigal/user_study_seed13_b/knn/11-lead-001048_fol-009102_c-1_i-True.mp4
-Saving file tests/sigal/user_study_seed13_b/momo_motions.npy...
-Saving file tests/sigal/user_study_seed13_b/inpaint_motions.npy...
-Saving file tests/sigal/user_study_seed13_b/knn_motions.npy...
-.
-
-================================================================================================== warnings summary ==================================================================================================
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/torchvision/io/image.py:13
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/torchvision/image.so: undefined symbol: _ZN5torch3jit17parseSchemaOrNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
-    warn(f"Failed to load image Python extension: {e}")
-
-../../miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/scipy/__init__.py:146
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.23.4
-    warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/ch.py:1203: DeprecationWarning: inspect.getargspec() is deprecated since Python 3.0, use inspect.signature() or inspect.getfullargspec()
-    want_out = 'out' in inspect.getargspec(func).args
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.complex` is a deprecated alias for the builtin `complex`. To silence this warning, use `complex` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.complex128` here.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.object` is a deprecated alias for the builtin `object`. To silence this warning, use `object` by itself. Doing this will not modify any behavior and is safe. 
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.unicode` is a deprecated alias for `np.compat.unicode`. To silence this warning, use `np.compat.unicode` by itself. In the likely event your code does not need to work on Python 2 you can use the builtin `str` for which `np.compat.unicode` is itself an alias. Doing this will not modify any behaviour and is safe. If you specifically wanted the numpy scalar type, use `np.str_` here.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-tests/generate_userstudy.py::test_retarget_from_csv[1-True]
-  /home/dcor/sigalraab/miniconda3/envs/python3p8_cuda11p7/lib/python3.8/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.str` is a deprecated alias for the builtin `str`. To silence this warning, use `str` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.str_` here.
-  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
-
-tests/generate_userstudy.py: 108 warnings
-  /home/dcor/sigalraab/python/mdm-sandbox-nathan/data_loaders/humanml/utils/plot_script.py:73: MatplotlibDeprecationWarning: Axes3D(fig) adding itself to the figure is deprecated since 3.4. Pass the keyword argument auto_add_to_figure=False and use fig.add_axes(ax) to suppress this warning. The default value of auto_add_to_figure will change to False in mpl3.5 and True values will no longer work in 3.6.  This is consistent with other Axes classes.
-    ax = p3.Axes3D(fig)
-
-tests/generate_userstudy.py: 108 warnings
-  /home/dcor/sigalraab/python/mdm-sandbox-nathan/data_loaders/humanml/utils/plot_script.py:46: MatplotlibDeprecationWarning: The 'b' parameter of grid() has been renamed 'visible' since Matplotlib 3.5; support for the old name will be dropped two minor releases later.
-    ax.grid(b=False)
-
--- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-============================================================================= 1 passed, 3 deselected, 233 warnings in 596.99s (0:09:56) ==============================================================================
-(python3p8_cuda11p7) sigalraab@c-009:~/python/mdm-sandbox-nathan$ client_loop: send disconnect: Broken pipe
-sigalraab@h-MacBook-Pro-sl-Sigal-2:~/Downloads$ ssh c9
-Welcome to NVIDIA DGX Server Version 5.0.5 (GNU/Linux 5.4.0-73-generic x86_64)
-
-  System information as of Sat 06 Jul 2024 11:10:45 IDT
-
-  System load:    3.24      Processes:                419
-  Usage of /home: unknown   Users logged in:          2
-  Memory usage:   6%        IPv4 address for docker0: 192.168.127.1
-  Swap usage:     6%        IPv4 address for eno1:    132.67.130.180
-  Temperature:    49.0 C
-
-Health of this system could not be determined. Please use 'sudo nvsm show alerts' to see any alerts the system might have.
-
-Last login: Sat Jul  6 10:56:18 2024 from 10.12.10.18
-coplatform is linux
-sigalraab@c-009:~$ conda activate python3p8_cuda11p7
-(python3p8_cuda11p7) sigalraab@c-009:~$ cd ~/python/mdm-sandbox-nathan
-(python3p8_cuda11p7) sigalraab@c-009:~/python/mdm-sandbox-nathan$ less tests/generate_userstudy.py 
-(python3p8_cuda11p7) sigalraab@c-009:~/python/mdm-sandbox-nathan$ less tests/generate_userstudy.py 
-(python3p8_cuda11p7) sigalraab@c-009:~/python/mdm-sandbox-nathan$ client_loop: send disconnect: Broken pipe
-sigalraab@h-MacBook-Pro-sl-Sigal-2:~/Downloads$ scp 240610_text_to_vector_generation__Ellie_Atar.pptx c9:
-240610_text_to_vector_generation__Ellie_Atar.pptx                                                                                                         100% 5948KB  15.0MB/s   00:00    
-sigalraab@h-MacBook-Pro-sl-Sigal-2:~/Downloads$ cd ../
-sigalraab@h-MacBook-Pro-sl-Sigal-2:~$ 
-sigalraab@h-MacBook-Pro-sl-Sigal-2:~$ cd web_pages/humogen.github.io/
-sigalraab@h-MacBook-Pro-sl-Sigal-2:~/web_pages/humogen.github.io$ vi index.html 
-
+  </div>
+  <h2>
+    <center>
+      <span style="font-size:150%;color:#777;font-weight:normal">
+          <a href="https://cvpr.thecvf.com/" target="_blank">CVPR 2024</a>  </span>
+          <br>
+      <span style="font-size:150%;color:#000;font-weight:normal">Tuesday, June 18 - Summit 430 </span>
+      <br>
+      <span style="font-size:150%;color:#000;font-weight:normal">8:30 AM–12:00 PM </span>
+      <!-- <span style="font-size:92%;color:#777;font-weight:bold">In Person</span><br> -->
+      <!-- <span style="font-size:130%;color:#777;font-weight:bold">East 18@Vancouver Convention Center</span>       -->
+    </center>
+	</h2><br>
+</div>
+
+<div id="menu">
+    <center>
+      <ul>
+        <li><a href="#speakers">Speakers</a></li>
+        <!-- <li><a href="./schedule.html" accesskey="2">Schedule</a></li> -->
+        <li><a href="./papers.html" accesskey="3">Papers</a></li>
+        <li><a href="#cfp">Call for Papers</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </center>
+</div>
+
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+              mybutton.style.display = "block";
+                } else {
+                        mybutton.style.display = "none";
+                          }
+}
+
+// When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-      document.body.scrollTop = 0; 
-        document.documentElement.scrollTop = 0; 
-}       
+      document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+}
 </script>
-        
+
         <div id="content">
           <h2>Full Recording</h2>
           <br>
@@ -1147,40 +86,259 @@ function topFunction() {
         </div>
 
 
-        <div id="content">
-<h2>News</h2> 
+	<div id="content">
+<h2>News</h2>
 <!-- <img alt src="new.gif" height="15"/> -->
 <p>
-<ul>                      
-
+<ul>
+  
 
   <li>  [June 17, 2024] Find your poster board id here: <a href="https://docs.google.com/spreadsheets/d/1kjM7L1hr7oLT9TNKKIE6iLeltEUrSiiKZ-DFiHzzTWQ/edit?usp=sharing">Poster Board Assignment</a>. </li>
   <li>  [Apr 5, 2024] Decisions on paper submission have been released.<br> </li>
   <li>  [Jan 17, 2024] Workshop website launched, with <a href="#cfp">Call-for-Papers</a> and <a href="#speakers">speakers</a> announced.  </li>
-</ul> 
-</p>  
-      
-      
+</ul>
+</p>
+
+
 <h2>Introduction</h2>
-      
+
 <p>Motion is one of the fundamental attributes of human (and animal) life and underlies our actions, gestures as well as our behavior.
     The <i> capture</i> and <i>synthesis</i> of human motion have been among the core areas of interest for the CVPR community and facilitate a variety of applications such as avatar creation, 3D character animations, AR/VR, crowd simulation, sports analytics and many more.</p>
-  
+
 <p>The prime goal of the workshop is to bring the human motion synthesis community together and foster discussions about the existing challenges and future direction.
     To enable this, we feature invited talks presented by a diverse group of leading experts spanning a variety of sub-domains. With this workshop, we hope to encourage cross-pollination of ideas coming from different vantage points as well as discuss the gap between the academic and the industrial perspectives of the topic.
    <!--We anticipate that this workshop will play a pivotal role in shaping the development of the next generation of ideas and provide a platform for addressing the challenges faced by the community as a whole. -->
 </p>
-   
+	
 <!-- <h2 id="speakers">Invited Speakers (Check out the <a href="./schedule.html">Full Schedule</a>)</h2> -->
 <h2 id="speakers">Invited Speakers</h2>
 <center>
-      
+
 <table style="width:100%">
-<p>     
-        
-<tr>    
+<p>
+
+<tr>
 <td><center><a href="https://theorangeduck.com/page/about" target="_blank"> <img alt src="data/daniel_holden.jpeg" height="170"/> </a></center> </td>
 <td><center><a href="https://vlg.inf.ethz.ch/team/Prof-Dr-Siyu-Tang.html" target="_blank"><img alt src="data/siyu.jpeg" height="170"/> </a></center> </td>
 </tr>
     <tr>
-"index.html" 344L, 15220B written
+        <td> <center> <h3> Daniel Holden</h3> </center></td>
+        <td> <center> <h3> Siyu Tang</h3> </center></td>
+        </tr>
+        <tr>
+            <td> <center> <font size= "2">Principal Animation Programmer <br> Epic Games</font></center> </td>
+            <td> <center> <font size= "2">Assistant Professor <br> ETH Zurich</font></center> </td>
+        </tr>
+
+        <tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<td><center><a href="https://www.cs.ucdavis.edu/~neff/" target="_blank"> <img alt src="data/MichaelNeff.jpeg" height="170"/> </a></center> </td>
+    <!-- <td><center><a href="https://people.mpi-inf.mpg.de/~theobalt/" target="_blank"> <img alt src="data/Christian_Theobalt.jpeg" height="170"/> </a></center> </td> -->
+<td><center><a href="https://profiles.stanford.edu/c-karen-liu" target="_blank"><img alt src="data/karen_liu.jpeg" height="170"/> </a></center></td>
+        </tr>
+        <tr>
+        <td> <center> <h3> Michael Neff </h3> </center></td>
+                    <td> <center> <h3> C. Karen Liu</h3> </center></td>
+        <!-- <td> <center> <h3> Christian Theobalt </h3> </center></td> -->
+</tr>
+        <tr>
+<td> <center> <font size= "2">Professor<br>University of California, Davis</font></center> </td>
+            <!-- <td> <center> <font size= "2">Director<br>Max-Planck Institute for Informatics<br>Saarland University<br> Saarbruecken Center for Visual Computing</font></center> </td> -->
+            <td> <center> <font size= "2">Professor<br>Stanford University</font></center> </td>
+        </tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+
+</p>
+</table>
+</center>
+
+
+<h2 id="cfp">Schedule</h2>
+<br>
+<h3>Tuesday, June 18 - Summit 430</h3>
+<p>
+  <ul>
+      <li>8:30 - 8:40 - Welcome and Introductions</li>
+      <li>8:40 - 9:25 - Daniel Holden</li>
+      <li>9:25 - 10:10 - Michael Neff</li>
+      <li>10:10 - 10:25 - Break</li>
+      <li>10:25 - 11:10 - Karen Liu</li>
+      <li>11:10 - 11:55 - Siyu Tang</li>
+      <li>11:55 - 12:00 - Closing remarks and winning paper announcement</li>
+      <li>12:00 - 13:00 - Poster session @ Arch Building Exhibit Hall 4E</li>
+	Find your poster board id here: <a href="https://docs.google.com/spreadsheets/d/1kjM7L1hr7oLT9TNKKIE6iLeltEUrSiiKZ-DFiHzzTWQ/edit?usp=sharing">Poster Board Assignment</a>
+
+  </ul>
+</p>
+
+
+
+<!-- (Check out the <a href="./papers.html">Accepted Papers</a>) -->
+<h2 id="cfp">Call for Papers </h2>
+<p>
+  We invite submissions of full-length papers (8 pages excluding the references) for workshop proceedings. The topics covered in the workshop include but are not limited to:
+</p>
+  <p>
+      <ul>
+        <li>Advances in generative human motion synthesis models</li>
+        <li>Evaluation metrics for motion synthesis literature</li>
+        <li>Advances in motion synthesis conditioned by external controls (e.g., text, music)</li>
+        <li>Advances in motion synthesis conditioned by motion parts (e.g., prefix, in-betweening) or poses (e.g., key-frames)</li>
+        <li>Advances in language-driven gesture synthesis</li>
+        <li>Advances in human-scene interaction synthesis</li>
+        <li>Ethical considerations in motion synthesis and dataset biases</li>
+        <li>Advances in character animation</li>
+        <li>Advances in physically-plausible motion synthesis</li>
+        <li>New datasets or benchmarks for human motion generation </li>
+  </ul>
+  </p>
+
+<h3>Submission Instructions</h3>  
+<p>
+  <p>All submissions should follow the CVPR 2024 instructions. The papers will be subject to a <b>double-blind</b> review process, i.e. authors must not identify themselves on the submitted papers. The reviewing process is single-stage without rebuttals. 
+  </p>
+
+  <!-- Submissions are anonymous and should NOT include any author names, affiliations, and contact information in the PDF. -->
+  <ul>
+    <li>Online Submission System:  <a href="https://openreview.net/group?id=thecvf.com/CVPR/2024/Workshop/HuMoGen" target="_blank">OpenReview.</a></li>
+    <li>Submission Format: <a href="https://github.com/cvpr-org/author-kit/releases" target="_blank">official CVPR template</a>  (double column; no more than 8 pages, excluding reference).</li>
+  </ul>
+  <p>
+    All authors submitting a paper are required to have an OpenReview profile.
+    New profiles with institutional emails are automatically activated, while those without one undergo a moderation process, taking up to two weeks.
+  </p>
+<!--  <p>We also invite <b>1-page abstract</b> submissions of already published or recently accepted works (including CVPR24). If you think your work is relevant to the workshop please send the abstract to <a href="mailto:humogen2024@gmail.com" target="_blank">humogen2024@gmail.com</a>. The accepted works will be invited to present a poster during the workshop.</p>-->
+<!--  If you have any questions, feel free to reach out to us.-->
+<!--  </p>-->
+
+ <h2 id="cfp">Call for 1-page abstracts </h2>
+<p>
+Conference and Journal  accepted papers from the areas above are invited to submit one-page abstract via <a href="mailto:humogen2024@gmail.com" target="_blank">humogen2024@gmail.com</a>.
+ Accepted abstracts will be presented at the workshop's posters session. The deadline is June 4, yet notifications will be asynchronous - approximately  one week from submission.
+</p>
+
+  <h2>Timeline Table (11:59 PM, Pacific Time)</h2>
+  <ul>
+      <li>Full-paper submission deadline: <b>March 23,</b> 2024 </li>
+      <li>Notification to authors: <b>April 5,</b> 2024</li>
+      <li>Camera-ready deadline: <b>April 14,</b> 2024</li>
+      <li>1-page Abstract submission deadline: <b>June 4,</b> 2024</li>
+      <li>Workshop: <b>June 18 AM,</b> 2024</li>
+    </ul>
+
+    <h3>Poster Printing</h3>
+    Authors of accepted papers should prepare a poster according to 
+    <a href="https://cvpr.thecvf.com/Conferences/2024/PosterPrintingInformation#:~:text=submitting%20the%20poster.*******-,Workshop%20Posters,-PRINTING%20YOUR%20WORKSHOP" 
+    target="_blank">CVPR poster printing instructions</a>.
+</p>
+
+
+<h2 id="organizers">Workshop Organizers</h2>
+<center>
+
+<table style="width:100%">
+<p>
+
+<tr>
+<td><center><a href="https://peizhuoli.github.io/" target="_blank"> <img alt height="170" src="data/peizhuo_li.jpeg"/> </a></center> </td>
+<td><center><a href="https://rishabhdabral.github.io/" target="_blank"><img alt height="170" src="data/rishabh_dabral.png"/> </a></center>
+<td><center><a href="https://sigal-raab.github.io/" target="_blank"> <img alt src="data/sigal_raab.png" height="170"/> </a></center> </td>
+</tr>
+<tr>
+<td> <center> <h3>  Peizhuo Li </h3> </center></td>
+<td> <center> <h3> Rishabh Dabral </h3> </center></td>
+<td> <center> <h3> Sigal Raab </h3> </center></td>
+</tr>
+<tr>
+<td> <center> <font size= "2"> Ph.D. Student <br> ETH Zurich </font></center> </td>
+<td> <center> <font size= "2">Postdoctoral Researcher<br>Max-Planck Institute for Informatics</font></center> </td>
+<td> <center> <font size= "2"> Ph.D. Student<br>Tel-Aviv University</font></center> </td>
+</tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+
+<tr>
+  <td><center><a href="https://guytevet.github.io/" target="_blank"> <img alt src="data/guy_tevet.jpeg" height="170"/> </a></center> </td>
+  <td><center><a href="https://ericguo5513.github.io/" target="_blank"> <img alt src="data/chuan_guo.jpeg" height="170"/> </a></center> </td>
+  <td><center><a href="https://people.mpi-inf.mpg.de/~ihabibie/" target="_blank"> <img alt src="data/ikus.jpeg" height="170"/> </a></center> </td>
+</tr>
+<tr>
+<td> <center> <h3>  Guy Tevet </h3> </center></td>
+<td> <center> <h3> Chuan Guo</h3> </center></td>
+<td> <center> <h3> Ikhsanul Habibie </h3> </center></td>
+</tr>
+<tr>
+<td> <center> <font size= "2"> Ph.D. Student <br> Tel-Aviv University </font></center> </td>
+<td> <center> <font size= "2"> Research Scientist <br>Snap Research</font></center> </td>
+<td> <center> <font size= "2"> Postdoctoral Researcher <br>Max-Planck Institute for Informatics</font></center> </td>
+</tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+
+</p>
+</table>
+</center>
+
+<center>
+<table style="width:100%">
+<p>
+<tr>
+  <td><center><a href="https://www.cs.tau.ac.il/~amberman/" target="_blank"> <img alt height="170" src="data/amit_bermano.png"/> </a></center> </td>
+  <td><center><a href="https://people.mpi-inf.mpg.de/~theobalt/" target="_blank"> <img alt height="170" src="data/Christian_Theobalt.jpeg"/> </a></center> </td>
+</tr>
+<tr>
+<td> <center> <h3> Amit Haim Bermano </h3> </center></td>
+<td> <center> <h3> Christian Theobalt</h3> </center></td>
+</tr>
+<tr>
+<td> <center> <font size= "2">Professor<br>Tel-Aviv University</font></center> </td>
+<td> <center> <font size= "2">Director<br>Max-Planck Institute for Informatics<br>Saarland University<br> Saarbruecken Center for Visual Computing</font></center> </td>
+</tr>
+</p>
+</table>
+</center>
+
+
+<!--
+<h2 id="Committee Members">Committee Members</h2>
+<p>
+To be determined.
+</p>
+-->
+
+<h3 id="contact">Contact Info</h2>
+<p>E-mail: 
+<a href="mailto:humogen2024@gmail.com" target="_blank">humogen2024@gmail.com</a>
+</p>
+
+<h3 id="contact">Acknowledgements</h2>
+  <p>This workshop has been supported in part by <img alt src="data/meta_symbol.jpg" height="15"/>  </p>
+<p>Website template borrowed from: 
+<a href="https://rhobin-challenge.github.io/" target="_blank">https://rhobin-challenge.github.io/</a>
+</p>
+
+
+<div style="clear: both;">&nbsp;</div>
+</div><br><br>
+
+</body>
+</html>
+
