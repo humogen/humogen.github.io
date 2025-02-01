@@ -1,0 +1,700 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>HuMoGen Workshop@CVPR24</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link href="data/default.css" rel="stylesheet" type="text/css" />
+    <!-- <link rel="icon" type="image/png" href="./data/humogen_logo.png" /> -->
+    <meta property='og:title' content='HuMoGen: Workshop on Human Motion Generation @ CVPR24'/>
+    <meta property='og:url' content='https://humogen.github.io/' />
+    <meta property="og:type" content="website" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function moreOrLess(tableData) {
+            obj = tableData.find("span");
+            button = tableData.find("button");
+            console.log(obj.hasClass("hidden"))
+            if (obj.hasClass("hidden")) {
+                obj.slideDown("fast");
+                obj.removeClass("hidden");
+                button.html("Hide Abstract");
+            } else {
+                obj.slideUp("fast");
+                obj.addClass("hidden");
+                button.html("Show Abstract");
+            }
+        }
+    </script>
+  </head>
+
+  <body>
+    <div id="header">
+      <div id="logo">
+    <h1>
+        <center>
+             <span style="font-size:50%;color:#777;font-weight:normal">The first Workshop on</span><br>
+             Human Motion Generation (HuMoGen)
+             
+        </center>
+    </h1><br>
+  <div class="my-image-box-header">
+   <center><img src="./data/humogen_logo.png" alt="humogen_logo" height="190">
+    <!-- <img src="data/Adobe_Corporate_logo.svg.png" width="320" height="83">  -->
+  </center>
+    
+  </div>
+  <h2>
+    <center>
+      <span style="font-size:150%;color:#777;font-weight:normal">
+          <a href="https://cvpr.thecvf.com/" target="_blank">CVPR 2024</a>  </span>
+          <br>
+      <span style="font-size:150%;color:#000;font-weight:normal">Tuesday, June 18 - Summit 430 </span>
+      <br>
+      <span style="font-size:150%;color:#000;font-weight:normal">8:30 AM–12:00 PM </span>
+      <!-- <span style="font-size:92%;color:#777;font-weight:bold">In Person</span><br> -->
+      <!-- <span style="font-size:130%;color:#777;font-weight:bold">East 18@Vancouver Convention Center</span>       -->
+    </center>
+    </h2><br>
+</div>
+  
+    <div id="menu">
+    <center>
+      <ul>
+        <li class="first"><a href="./index.html" accesskey="1">Home</a></li>
+      </ul>
+    </center>
+</div>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+              mybutton.style.display = "block";
+                } else {
+                        mybutton.style.display = "none";
+                          }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+      document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+}
+</script>
+
+
+        <div id="content">
+<!-- <p>
+<ul>
+<li>
+    We are hosting <a href="https://app.gather.town/app/zDHzSsCHaRrEvEq4/ECCV%20VOLI%20Workshop" target="_blank">the poster session</a> on GatherTown (check out <a href="./gathertown_instruction.pdf" target="_blank">the GatherTown instructions</a> on how to join).
+</li>
+</ul>
+</p> -->
+
+<center>
+
+            <h2>Paper Presentation</h2>
+  	Find your poster board id here: <a href="https://docs.google.com/spreadsheets/d/1kjM7L1hr7oLT9TNKKIE6iLeltEUrSiiKZ-DFiHzzTWQ/edit?usp=sharing">Poster Board Assignment</a>
+
+            <table>
+                <tr class="row_type_A">
+                    <td width="20px" , class="paper_id">1</td>
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">Taeryung Lee, Fabien Baradel, Thomas Lucas, Kyoung Mu Lee, Grégory Rogez
+                                </span></strong>
+                        </div>
+                        <div style="text-align: center;">
+                            <a href="https://openaccess.thecvf.com/content/CVPR2024W/HuMoGen/papers/Lee_T2LM_Long-Term_3D_Human_Motion_Generation_from_Multiple_Sentences_CVPRW_2024_paper.pdf" target="_blank">[PDF]</a>
+                            <!-- <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+                        </div>
+                    </td>
+
+
+                    <td id="paper1">
+                        <p class="poster_title">
+                             T2LM: Long-Term 3D Human Motion Generation from Multiple Sentences 
+                        </p>
+                        <span class="hidden">
+                            <p><strong>Abstract:</strong>
+                                In this paper, we address the challenging problem of long-term 3D human motion generation. Specifically, we aim to generate a long sequence of smoothly connected actions from a stream of multiple sentences (i.e., paragraph). Previous long-term motion generating approaches were mostly based on recurrent methods, using previously generated motion chunks as input for the next step. However, this approach has two drawbacks: 1) it relies on sequential datasets, which are expensive; 2) these methods yield unrealistic gaps between motions generated at each step. To address these issues, we introduce simple yet effective T2LM, a continuous long-term generation framework that can be trained without sequential data. T2LM comprises two components: a 1D-convolutional VQVAE, trained to compress motion to sequences of latent vectors, and a Transformer-based Text Encoder that predicts a latent sequence given an input text. At inference, a sequence of sentences is translated into a continuous stream of latent vectors. This is then decoded into a motion by the VQVAE decoder; the use of 1D convolutions with a local temporal receptive field avoids temporal inconsistencies between training and generated sequences. This simple constraint on the VQ-VAE allows it to be trained with short sequences only and produces smoother transitions. T2LM outperforms prior long-term generation models while overcoming the constraint of requiring sequential data; it is also competitive with SOTA single-action generation models.
+                            </p>
+                        </span>
+                        <div style="text-align: center;">
+                            <button onclick="moreOrLess($('#paper1'))">Show Abstract</button>
+                        </div>
+                    </td>
+                </tr>
+               
+               <tr class="row_type_B">
+                    <td width="20px" , class="paper_id">2</td>
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Uttaran Bhattacharya, Aniket Bera, Dinesh Manocha                                </span></strong>
+                        </div>
+                        <div style="text-align: center;">
+                            <a href="https://openaccess.thecvf.com/content/CVPR2024W/HuMoGen/papers/Bhattacharya_Speech2UnifiedExpressions_Synchronous_Synthesis_of_Co-Speech_Affective_Face_and_Body_Expressions_CVPRW_2024_paper.pdf" target="_blank">[PDF]</a>
+                            <!-- <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+                        </div>
+                    </td>
+                    <td id="paper2">
+                        <p class="poster_title">
+                            Speech2UnifiedExpressions: Synchronous Synthesis of Co-Speech Affective Face and Body Expressions from Affordable Inputs                         </p>
+                        <span class="hidden">
+                            <p><strong>Abstract:</strong>
+                                We present a multimodal learning-based method to simultaneously synthesize co-speech facial expressions and upper-body gestures for digital characters using RGB video data captured using commodity cameras. Our approach learns from sparse face landmarks and upper-body joints, estimated directly from video data, to generate plausible emotive character motions. Given a speech audio waveform and a token sequence of the speaker's face landmark motion and body-joint motion computed from a video, our method synthesizes the full sequence of motions for the speaker's face landmarks and body joints that match the content and the affect of the speech. To this end, we design a generator consisting of a set of encoders to transform all the inputs into a multimodal embedding space capturing their correlations, followed by a pair of decoders to synthesize the desired face and pose motions. To enhance the plausibility of our synthesized motions, we use an adversarial discriminator that learns to differentiate between the face and pose motions computed from the original videos and our synthesized motions based on their affective expressions. To evaluate our approach, we extend the TED Gesture Dataset to include view-normalized, co-speech face landmarks in addition to body gestures. We demonstrate the performance of our method through thorough quantitative and qualitative experiments on multiple evaluation metrics and via a user study, and observe that our method results in low reconstruction error and produces synthesized samples with diverse facial expressions and body gestures for digital characters. We will release the extended dataset as the TED Gesture+Face Dataset consisting of 250K samples and the relevant source code.
+                            </p>
+                        </span>
+                        <div style="text-align: center;">
+                            <button onclick="moreOrLess($('#paper2'))">Show Abstract</button>
+                        </div>
+                    </td>
+                </tr>
+                 
+
+                <tr class="row_type_B">
+                    <td width="20px" , class="paper_id">3</td>
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Jenny Sheng, Matthieu Lin, Andrew Zhao, Kevin Pruvost, Yu-Hui Wen, Yangguang Li, Gao Huang, Yong-jin Liu                               </span></strong>
+                        </div>
+                        <div style="text-align: center;">
+                            <a href="https://openaccess.thecvf.com/content/CVPR2024W/HuMoGen/papers/Sheng_Exploring_Text-to-Motion_Generation_with_Human_Preference_CVPRW_2024_paper.pdf" target="_blank">[PDF]</a>
+                            <!-- <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+                        </div>
+                    </td>
+                    <td id="paper3">
+                        <p class="poster_title">
+                            Exploring Text-to-Motion Generation with Human Preference</p>
+                        <span class="hidden">
+                            <p><strong>Abstract:</strong>
+                                This paper presents an exploration of preference learning in text-to-motion generation. We find that current improvements in text-to-motion generation still rely on datasets requiring expert labelers with motion capture systems. Instead, learning from human preference data does not require motion capture systems; a labeler with no expertise simply compares two generated motions. This is particularly efficient because evaluating the model's output is easier than gathering the motion that performs a desired task (e.g. backflip). To pioneer the exploration of this paradigm, we annotate 3,528 preference pairs generated by MotionGPT, marking the first effort to investigate various algorithms for learning from preference data. In particular, our exploration highlights important design choices when using preference data. Additionally, our experimental results show that preference learning has the potential to greatly improve current text-to-motion generative models. Our code and dataset will be publicly available to further facilitate research in this area.
+                            </p>
+                        </span>
+                        <div style="text-align: center;">
+                            <button onclick="moreOrLess($('#paper3'))">Show Abstract</button>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="row_type_B">
+                    <td width="20px" , class="paper_id">4</td>
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Baiyi Li, Edmond S. L. Ho, Hubert P. H. Shum, He Wang                               </span></strong>
+                        </div>
+                        <div style="text-align: center;">
+                            <a href="https://openaccess.thecvf.com/content/CVPR2024W/HuMoGen/papers/Li_Two-Person_Interaction_Augmentation_with_Skeleton_Priors_CVPRW_2024_paper.pdf" target="_blank">[PDF]</a>
+                            <!-- <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+                        </div>
+                    </td>
+                    <td id="paper4">
+                        <p class="poster_title">
+                                Two-Person Interaction Augmentation with Skeleton Priors</p>
+                        <span class="hidden">
+                            <p><strong>Abstract:</strong>
+                                Close and continuous interaction with rich contacts is a crucial aspect of human activities (e.g. hugging, dancing) and of interest in many domains like activity recognition, motion prediction, character animation, etc. However, acquiring such skeletal motion is challenging. While direct motion capture is expensive and slow, motion editing/generation is also non-trivial, as complex contact patterns with topological and geometric constraints have to be retained. To this end, we propose a new deep learning method for two-body skeletal interaction motion augmentation, which can generate variations of contact-rich interactions with varying body sizes and proportions while retaining the key geometric/topological relations between two bodies. Our system can learn effectively from a relatively small amount of data and generalize to drastically different skeleton sizes. Through exhaustive evaluation and comparison, we show it can generate high-quality motions, has strong generalizability and outperforms traditional optimization-based methods and alternative deep learning solutions.
+                            </p>
+                        </span>
+                        <div style="text-align: center;">
+                            <button onclick="moreOrLess($('#paper4'))">Show Abstract</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="row_type_B">
+                    <td width="20px" , class="paper_id">5</td>
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Mathis Petrovich, Or Litany, Umar Iqbal, Michael J. Black, Gül Varol, Xue Bin Peng, Davis Rempe                               </span></strong>
+                        </div>
+                        <div style="text-align: center;">
+                            <a href="https://openaccess.thecvf.com/content/CVPR2024W/HuMoGen/papers/Petrovich_Multi-Track_Timeline_Control_for_Text-Driven_3D_Human_Motion_Generation_CVPRW_2024_paper.pdf" target="_blank">[PDF]</a>
+                            <!-- <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+                        </div>
+                    </td>
+                    <td id="paper5">
+                        <p class="poster_title">
+                                Multi-Track Timeline Control for Text-Driven 3D Human Motion Generation</p>
+                        <span class="hidden">
+                            <p><strong>Abstract:</strong>
+                                Recent advances in generative modeling have led to promising progress on synthesizing 3D human motion from text, with methods that can generate character animations from short prompts and specified durations. However, using a single text prompt as input lacks the fine-grained control needed by animators, such as composing multiple actions and defining precise durations for parts of the motion. To address this, we introduce the new problem of timeline control for text-driven motion synthesis, which provides an intuitive, yet fine-grained, input interface for users. Instead of a single prompt, users can specify a multi-track timeline of multiple prompts organized in temporal intervals that may overlap. This enables specifying the exact timings of each action and composing multiple actions in sequence or at overlapping intervals. To generate composite animations from a multi-track timeline, we propose a new test-time denoising method. This method can be integrated with any pre-trained motion diffusion model to synthesize realistic motions that accurately reflect the timeline. At every step of denoising, our method processes each timeline interval (text prompt) individually, subsequently aggregating the predictions with consideration for the specific body parts engaged in each action. Experimental comparisons and ablations validate that our method produces realistic motions that respect the semantics and timing of given text prompts.
+                            </p>
+                        </span>
+                        <div style="text-align: center;">
+                            <button onclick="moreOrLess($('#paper5'))">Show Abstract</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="row_type_B">
+                    <td width="20px" , class="paper_id">6</td>
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Steven Hogue, Chenxu Zhang, Hamza Daruger, Yapeng Tian, Xiaohu Guo                               </span></strong>
+                        </div>
+                        <div style="text-align: center;">
+                            <a href="https://openaccess.thecvf.com/content/CVPR2024W/HuMoGen/papers/Hogue_DiffTED_One-shot_Audio-driven_TED_Talk_Video_Generation_with_Diffusion-based_Co-speech_CVPRW_2024_paper.pdf" target="_blank">[PDF]</a>
+                            <!-- <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+                        </div>
+                    </td>
+                    <td id="paper6">
+                        <p class="poster_title">
+                            DiffTED: One-shot Audio-driven TED Talk Video Generation with Diffusion-based Co-speech Gestures</p>
+                        <span class="hidden">
+                            <p><strong>Abstract:</strong>
+                                Audio-driven talking video generation has advanced significantly, but existing methods often depend on video-to-video translation techniques and traditional generative networks like GANs and they typically generate taking heads and co-speech gestures separately, leading to less coherent outputs. Furthermore, the gestures produced by these methods often appear overly smooth or subdued, lacking in diversity, and many gesture-centric approaches do not integrate talking head generation. To address these limitations, we introduce DiffTED, a new approach for one-shot audio-driven TED-style talking video generation from a single image. Specifically, we leverage a diffusion model to generate sequences of keypoints for a Thin-Plate Spline motion model, precisely controlling the avatar's animation while ensuring temporally coherent and diverse gestures. This innovative approach utilizes classifier-free guidance, empowering the gestures to flow naturally with the audio input without relying on pre-trained classifiers. Experiments demonstrate that DiffTED generates temporally coherent talking videos with diverse co-speech gestures.
+                            </p>
+                        </span>
+                        <div style="text-align: center;">
+                            <button onclick="moreOrLess($('#paper6'))">Show Abstract</button>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="row_type_B">
+                    <td width="20px" , class="paper_id">7</td>
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Léore Bensabath, Mathis Petrovich, Gül Varol                               </span></strong>
+                        </div>
+                        <div style="text-align: center;">
+                            <a href="https://openaccess.thecvf.com/content/CVPR2024W/HuMoGen/papers/Bensabath_A_Cross-Dataset_Study_for_Text-based_3D_Human_Motion_Retrieval_CVPRW_2024_paper.pdf" target="_blank">[PDF]</a>
+                            <a href="https://youtu.be/" target="_blank">[Video]</a>
+                        </div>
+                    </td>
+                    <td id="paper7">
+                        <p class="poster_title">
+                            A Cross-Dataset Study for Text-based 3D Human Motion Retrieval</p>
+                        <span class="hidden">
+                            <p><strong>Abstract:</strong>
+                                We provide results of our study on text-based 3D human motion retrieval and particularly focus on cross-dataset generalization. Due to practical reasons such as dataset-specific human body representations, existing works typically benchmark by training and testing on partitions from the same dataset. Here, we employ a unified SMPL body format for all datasets, which allows us to perform training on one dataset, testing on the other, as well as training on a combination of datasets. Our results suggest that there exist dataset biases in standard text-motion benchmarks such as HumanML3D, KIT Motion-Language, and BABEL. We show that text augmentations help close the domain gap to some extent, but the gap remains. We further provide the first zero-shot action recognition results on BABEL, without using categorical action labels during training, opening up a new avenue for future research.
+                            </p>
+                        </span>
+                        <div style="text-align: center;">
+                            <button onclick="moreOrLess($('#paper7'))">Show Abstract</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="row_type_B">
+                    <td width="20px" , class="paper_id">8</td>
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Pablo Ruiz-Ponce, German Barquero, Cristina Palmero, Sergio Escalera, José García-Rodríguez;                               </span></strong>
+                        </div>
+                        <div style="text-align: center;">
+                            <a href="https://openaccess.thecvf.com/content/CVPR2024W/HuMoGen/papers/Ruiz-Ponce_in2IN_Leveraging_Individual_Information_to_Generate_Human_INteractions_CVPRW_2024_paper.pdf" target="_blank">[PDF]</a>
+                            <!-- <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+                        </div>
+                    </td>
+                    <td id="paper8">
+                        <p class="poster_title">
+                            in2IN: Leveraging Individual Information to Generate Human INteractions</p>
+                        <span class="hidden">
+                            <p><strong>Abstract:</strong>
+                                Generating human-human motion interactions conditioned on textual descriptions is a very useful application in many areas such as robotics gaming animation and the metaverse. Alongside this utility also comes a great difficulty in modeling the highly dimensional inter-personal dynamics. In addition properly capturing the intra-personal diversity of interactions has a lot of challenges. Current methods generate interactions with limited diversity of intra-person dynamics due to the limitations of the available datasets and conditioning strategies. For this we introduce in2IN a novel diffusion model for human-human motion generation which is conditioned not only on the textual description of the overall interaction but also on the individual descriptions of the actions performed by each person involved in the interaction. To train this model we use a large language model to extend the InterHuman dataset with individual descriptions. As a result in2IN achieves state-of-the-art performance in the InterHuman dataset. Furthermore in order to increase the intra-personal diversity on the existing interaction datasets we propose DualMDM a model composition technique that combines the motions generated with in2IN and the motions generated by a single-person motion prior pre-trained on HumanML3D. As a result DualMDM generates motions with higher individual diversity and improves control over the intra-person dynamics while maintaining inter-personal coherence.
+                            </p>
+                        </span>
+                        <div style="text-align: center;">
+                            <button onclick="moreOrLess($('#paper8'))">Show Abstract</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="row_type_B">
+                    <td width="20px" , class="paper_id">9</td>
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Shivam Mehta, Anna Deichler, Jim O'regan, Birger Moëll, Jonas Beskow, Gustav Eje Henter, Simon Alexanderson                               </span></strong>
+                        </div>
+                        <div style="text-align: center;">
+                            <a href="https://openaccess.thecvf.com/content/CVPR2024W/HuMoGen/papers/Mehta_Fake_It_to_Make_It_Using_Synthetic_Data_to_Remedy_CVPRW_2024_paper.pdf" target="_blank">[PDF]</a>
+                            <!-- <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+                        </div>
+                    </td>
+                    <td id="paper9">
+                        <p class="poster_title">
+                            Fake It to Make It: Using Synthetic Data to Remedy the Data Shortage in Joint Multimodal Speech-and-Gesture Synthesis</p>
+                        <span class="hidden">
+                            <p><strong>Abstract:</strong>
+                                Although humans engaged in face-to-face conversation simultaneously communicate both verbally and non-verbally methods for joint and unified synthesis of speech audio and co-speech 3D gesture motion from text are a new and emerging field. These technologies hold great promise for more human-like efficient expressive and robust synthetic communication but are currently held back by the lack of suitably large datasets as existing methods are trained on parallel data from all constituent modalities. Inspired by student-teacher methods we propose a straightforward solution to the data shortage by simply synthesising additional training material. Specifically we use unimodal synthesis models trained on large datasets to create multimodal (but synthetic) parallel training data and then pre-train a joint synthesis model on that material. In addition we propose a new synthesis architecture that adds better and more controllable prosody modelling to the state-of-the-art method in the field. Our results confirm that pre-training on large amounts of synthetic data improves the quality of both the speech and the motion synthesised by the multimodal model with the proposed architecture yielding further benefits when pre-trained on the synthetic data.
+                            </p>
+                        </span>
+                        <div style="text-align: center;">
+                            <button onclick="moreOrLess($('#paper9'))">Show Abstract</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+        </center>
+
+
+            <h2>Abstract Presentations</h2>
+            <table>
+               
+               <tr class="row_type_B">
+
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Rajmund Nagy, Hendric Voss, Youngwoo Yoon, Taras Kucherenko, Teodor Nikolov, Rachel McDonnell, Stefan Kopp, Michael Neff, and Gustav Eje Henter                        </div>
+                        <div style="text-align: center;">
+                            <!-- <a href="" target="_blank">[PDF]</a> -->
+                            <!-- <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+                        </div>
+                    </td>
+                    <td id="abstract1">
+                        <p class="poster_title">
+                            Towards a GENEA Leaderboard – an Extended, Living Benchmark for Evaluating and Advancing Conversational Motion Synthesis 
+                            <span class="hidden">
+                            <!-- <p><strong>Abstract:</strong>
+                                Prior works for reconstructing hand-held objects from a single image rely on direct 3D shape supervision which is challenging to gather in real world at scale. Consequently, these approaches do not generalize well when presented with novel objects in in-the-wild settings. While 3D supervision is a major bottleneck, there is an abundance of in-the-wild raw video data showing hand-object interactions. In this paper, we automatically extract 3D supervision (via multiview 2D supervision) from such raw video data (e.g. VISOR) to scale up the learning of models for hand-held object reconstruction. This requires tackling two key challenges: unknown camera pose and occlusion. For the former, we use hand pose (from existing techniques) as a proxy for object pose. For the latter, we learn data-driven 3D shape priors using synthetic objects from the ObMan dataset. We use these indirect 3D cues to train occupancy networks that predict the 3D shape of objects from a single RGB image. Our experiments on the MOW dataset show the effectiveness of these supervisory signals in predicting coherent 3D shapes and generalizing better to in-the-wild images compared to baselines. Since our approach does not require 3D supervision, we can also scale it up by incorporating additional datasets. -->
+                            </p>
+                        </span>
+                        <div style="text-align: center;">
+                            <!-- <button onclick="moreOrLess($('#abstract1'))">Show Abstract</button> -->
+                        </div>
+                    </td>
+                </tr>
+                 
+
+                <tr class="row_type_B">
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Liang Xu, Xintao Lv, Yichao Yan, Xin Jin, Shuwen Wu, Congsheng Xu, Yifan Liu, Yizhou Zhou, Fengyun Rao, Xingdong Sheng, Yunhui Liu, Wenjun Zeng, Xiaokang Yang
+                            </div>
+                        <div style="text-align: center;">
+                            <a href="https://arxiv.org/pdf/2312.16051" target="_blank">[PDF]</a>
+                            <!-- <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+                        </div>
+                    </td>
+                    <td id="abstract2">
+                        <p class="poster_title">
+                            Inter-X: Towards Versatile Human-Human Interaction Analysis                         <span class="hidden">
+                            <!-- <p><strong>Abstract:</strong>
+                                Various heuristic objectives for modeling hand-object interaction have been employed in past work. However, due to the lack of a cohesive framework, these objectives often have a narrow scope of application and are limited by their efficiency or accuracy. In this paper, we propose HandyPriors, a unified and general pipeline for human-object interaction scenes by leveraging recent advances in differentiable physics and rendering. Our approach uses rendering priors to align with input images and segmentation masks, while physics priors mitigate penetration and relative-sliding across frames. Furthermore, we present two alternatives for hand and object pose estimation. The optimization-based pose estimation achieves high accuracy, while the filtering-based tracking, which utilizes the differentiable priors as dynamics and observation models, runs faster. We show that HandyPriors achieves comparable or better results in the pose estimation task, and the differentiable physics module enables us to predict contact information for pose refinement. We also show that our approach generalizes to perception tasks including robotic hand manipulation and human-object pose estimation in the wild.
+
+                            </p> -->
+                        </span>
+                        <div style="text-align: center;">
+                            <!-- <button onclick="moreOrLess($('#abstract2'))">Show Abstract</button> -->
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="row_type_B">
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Jihyun Lee, Shunsuke Saito, Giljoo Nam, Minhyuk Sung, Tae-Kyun Kim
+                            </div>
+                        <div style="text-align: center;">
+                            <a href="https://arxiv.org/pdf/2403.17422" target="_blank">[PDF]</a>
+                            <!-- <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+                        </div>
+                    </td>
+                    <td id="abstract2">
+                        <p class="poster_title">
+                            InterHandGen: Two-Hand Interaction Generation via Cascaded Reverse Diffusion                         <span class="hidden">
+                            <!-- <p><strong>Abstract:</strong>
+                                Various heuristic objectives for modeling hand-object interaction have been employed in past work. However, due to the lack of a cohesive framework, these objectives often have a narrow scope of application and are limited by their efficiency or accuracy. In this paper, we propose HandyPriors, a unified and general pipeline for human-object interaction scenes by leveraging recent advances in differentiable physics and rendering. Our approach uses rendering priors to align with input images and segmentation masks, while physics priors mitigate penetration and relative-sliding across frames. Furthermore, we present two alternatives for hand and object pose estimation. The optimization-based pose estimation achieves high accuracy, while the filtering-based tracking, which utilizes the differentiable priors as dynamics and observation models, runs faster. We show that HandyPriors achieves comparable or better results in the pose estimation task, and the differentiable physics module enables us to predict contact information for pose refinement. We also show that our approach generalizes to perception tasks including robotic hand manipulation and human-object pose estimation in the wild.
+
+                            </p> -->
+                        </span>
+                        <div style="text-align: center;">
+                            <!-- <button onclick="moreOrLess($('#abstract2'))">Show Abstract</button> -->
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="row_type_B">
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Marcin Panek
+                            </div>
+                        <div style="text-align: center;">
+                            <!-- <a href="" target="_blank">[PDF]</a> -->
+                            <!-- <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+                        </div>
+                    </td>
+                    <td id="abstract2">
+                        <p class="poster_title">
+                            Rigplay: Movement database designed for Machine Learning                         <span class="hidden">
+                            <!-- <p><strong>Abstract:</strong>
+                                Various heuristic objectives for modeling hand-object interaction have been employed in past work. However, due to the lack of a cohesive framework, these objectives often have a narrow scope of application and are limited by their efficiency or accuracy. In this paper, we propose HandyPriors, a unified and general pipeline for human-object interaction scenes by leveraging recent advances in differentiable physics and rendering. Our approach uses rendering priors to align with input images and segmentation masks, while physics priors mitigate penetration and relative-sliding across frames. Furthermore, we present two alternatives for hand and object pose estimation. The optimization-based pose estimation achieves high accuracy, while the filtering-based tracking, which utilizes the differentiable priors as dynamics and observation models, runs faster. We show that HandyPriors achieves comparable or better results in the pose estimation task, and the differentiable physics module enables us to predict contact information for pose refinement. We also show that our approach generalizes to perception tasks including robotic hand manipulation and human-object pose estimation in the wild.
+
+                            </p> -->
+                        </span>
+                        <div style="text-align: center;">
+                            <!-- <button onclick="moreOrLess($('#abstract2'))">Show Abstract</button> -->
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="row_type_B">
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Roy Kapon, Guy Tevet, Daniel Cohen-Or, Amit H. Bermano
+                            </div>
+                        <div style="text-align: center;">
+                            <a href="https://arxiv.org/pdf/2310.14729" target="_blank">[PDF]</a>
+                            <!-- <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+                        </div>
+                    </td>
+                    <td id="abstract2">
+                        <p class="poster_title">
+                            MAS: Multi-view Ancestral Sampling for 3D motion generation using 2D diffusion                         <span class="hidden">
+                            <!-- <p><strong>Abstract:</strong>
+                                Various heuristic objectives for modeling hand-object interaction have been employed in past work. However, due to the lack of a cohesive framework, these objectives often have a narrow scope of application and are limited by their efficiency or accuracy. In this paper, we propose HandyPriors, a unified and general pipeline for human-object interaction scenes by leveraging recent advances in differentiable physics and rendering. Our approach uses rendering priors to align with input images and segmentation masks, while physics priors mitigate penetration and relative-sliding across frames. Furthermore, we present two alternatives for hand and object pose estimation. The optimization-based pose estimation achieves high accuracy, while the filtering-based tracking, which utilizes the differentiable priors as dynamics and observation models, runs faster. We show that HandyPriors achieves comparable or better results in the pose estimation task, and the differentiable physics module enables us to predict contact information for pose refinement. We also show that our approach generalizes to perception tasks including robotic hand manipulation and human-object pose estimation in the wild.
+
+                            </p> -->
+                        </span>
+                        <div style="text-align: center;">
+                            <!-- <button onclick="moreOrLess($('#abstract2'))">Show Abstract</button> -->
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="row_type_B">
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Muhammad Hamza Mughal,   Rishabh Dabral,   Ikhsanul Habibie,   Lucia Donatelli,   Marc Habermann,   Christian Theobalt
+                            </div>
+                        <div style="text-align: center;">
+                            <a href="https://arxiv.org/pdf/2403.17936" target="_blank">[PDF]</a>
+                            <!-- <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+                        </div>
+                    </td>
+                    <td id="abstract2">
+                        <p class="poster_title">
+                            ConvoFusion: Multi-Modal Conversational Diffusion for Co-Speech Gesture Synthesis                         <span class="hidden">
+                            <!-- <p><strong>Abstract:</strong>
+                                Various heuristic objectives for modeling hand-object interaction have been employed in past work. However, due to the lack of a cohesive framework, these objectives often have a narrow scope of application and are limited by their efficiency or accuracy. In this paper, we propose HandyPriors, a unified and general pipeline for human-object interaction scenes by leveraging recent advances in differentiable physics and rendering. Our approach uses rendering priors to align with input images and segmentation masks, while physics priors mitigate penetration and relative-sliding across frames. Furthermore, we present two alternatives for hand and object pose estimation. The optimization-based pose estimation achieves high accuracy, while the filtering-based tracking, which utilizes the differentiable priors as dynamics and observation models, runs faster. We show that HandyPriors achieves comparable or better results in the pose estimation task, and the differentiable physics module enables us to predict contact information for pose refinement. We also show that our approach generalizes to perception tasks including robotic hand manipulation and human-object pose estimation in the wild.
+
+                            </p> -->
+                        </span>
+                        <div style="text-align: center;">
+                            <!-- <button onclick="moreOrLess($('#abstract2'))">Show Abstract</button> -->
+                        </div>
+                    </td>
+                </tr>
+
+
+                <tr class="row_type_B">
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Zan Wang, Yixin Chen, Baoxiong Jia, Puhao Li, Jinlu Zhang, Jingze Zhang, Tengyu Liu, Yixin Zhu, Wei Liang, Siyuan Huang
+                            </div>
+                        <div style="text-align: center;">
+                            <a href="https://arxiv.org/pdf/2403.18036" target="_blank">[PDF]</a>
+                            <!-- <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+                        </div>
+                    </td>
+                    <td id="abstract2">
+                        <p class="poster_title">
+                            Move as You Say, Interact as You Can: Language-guided Human Motion Generation with Scene Affordance                         <span class="hidden">
+                            <!-- <p><strong>Abstract:</strong>
+                                Various heuristic objectives for modeling hand-object interaction have been employed in past work. However, due to the lack of a cohesive framework, these objectives often have a narrow scope of application and are limited by their efficiency or accuracy. In this paper, we propose HandyPriors, a unified and general pipeline for human-object interaction scenes by leveraging recent advances in differentiable physics and rendering. Our approach uses rendering priors to align with input images and segmentation masks, while physics priors mitigate penetration and relative-sliding across frames. Furthermore, we present two alternatives for hand and object pose estimation. The optimization-based pose estimation achieves high accuracy, while the filtering-based tracking, which utilizes the differentiable priors as dynamics and observation models, runs faster. We show that HandyPriors achieves comparable or better results in the pose estimation task, and the differentiable physics module enables us to predict contact information for pose refinement. We also show that our approach generalizes to perception tasks including robotic hand manipulation and human-object pose estimation in the wild.
+
+                            </p> -->
+                        </span>
+                        <div style="text-align: center;">
+                            <!-- <button onclick="moreOrLess($('#abstract2'))">Show Abstract</button> -->
+                        </div>
+                    </td>
+                </tr>
+
+
+                <tr class="row_type_B">
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Chuan Guo, Yuxuan Mu, Muhammad Gohar Javed, Sen Wang, Li Cheng
+                            </div>
+                        <div style="text-align: center;">
+                            <a href="https://arxiv.org/pdf/2312.00063" target="_blank">[PDF]</a>
+                            <!-- <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+                        </div>
+                    </td>
+                    <td id="abstract2">
+                        <p class="poster_title">
+                            MoMask: Generative Masked Modeling of 3D Human Motions                         <span class="hidden">
+                            <!-- <p><strong>Abstract:</strong>
+                                Various heuristic objectives for modeling hand-object interaction have been employed in past work. However, due to the lack of a cohesive framework, these objectives often have a narrow scope of application and are limited by their efficiency or accuracy. In this paper, we propose HandyPriors, a unified and general pipeline for human-object interaction scenes by leveraging recent advances in differentiable physics and rendering. Our approach uses rendering priors to align with input images and segmentation masks, while physics priors mitigate penetration and relative-sliding across frames. Furthermore, we present two alternatives for hand and object pose estimation. The optimization-based pose estimation achieves high accuracy, while the filtering-based tracking, which utilizes the differentiable priors as dynamics and observation models, runs faster. We show that HandyPriors achieves comparable or better results in the pose estimation task, and the differentiable physics module enables us to predict contact information for pose refinement. We also show that our approach generalizes to perception tasks including robotic hand manipulation and human-object pose estimation in the wild.
+
+                            </p> -->
+                        </span>
+                        <div style="text-align: center;">
+                            <!-- <button onclick="moreOrLess($('#abstract2'))">Show Abstract</button> -->
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="row_type_B">
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                German Barquero, Sergio Escalera, and Cristina Palmero
+                            </div>
+                        <div style="text-align: center;">
+                            <a href="https://arxiv.org/pdf/2402.15509" target="_blank">[PDF]</a>
+                            <!-- <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+                        </div>
+                    </td>
+                    <td id="abstract2">
+                        <p class="poster_title">
+                            FlowMDM: Seamless Human Motion Composition with Blended Positional Encodings                         <span class="hidden">
+                            <!-- <p><strong>Abstract:</strong>
+                                Various heuristic objectives for modeling hand-object interaction have been employed in past work. However, due to the lack of a cohesive framework, these objectives often have a narrow scope of application and are limited by their efficiency or accuracy. In this paper, we propose HandyPriors, a unified and general pipeline for human-object interaction scenes by leveraging recent advances in differentiable physics and rendering. Our approach uses rendering priors to align with input images and segmentation masks, while physics priors mitigate penetration and relative-sliding across frames. Furthermore, we present two alternatives for hand and object pose estimation. The optimization-based pose estimation achieves high accuracy, while the filtering-based tracking, which utilizes the differentiable priors as dynamics and observation models, runs faster. We show that HandyPriors achieves comparable or better results in the pose estimation task, and the differentiable physics module enables us to predict contact information for pose refinement. We also show that our approach generalizes to perception tasks including robotic hand manipulation and human-object pose estimation in the wild.
+
+                            </p> -->
+                        </span>
+                        <div style="text-align: center;">
+                            <!-- <button onclick="moreOrLess($('#abstract2'))">Show Abstract</button> -->
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="row_type_B">
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Aymen Mir, Xavier Puig, Angjoo Kanazawa, Gerard Pons-Moll
+                            </div>
+                        <div style="text-align: center;">
+                            <a href="https://arxiv.org/pdf/2304.02061" target="_blank">[PDF]</a>
+                            <!-- <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+                        </div>
+                    </td>
+                    <td id="abstract2">
+                        <p class="poster_title">
+                            Generating Continual Human Motion in Diverse 3D Scenes
+                         <span class="hidden">
+                            <!-- <p><strong>Abstract:</strong>
+                                Various heuristic objectives for modeling hand-object interaction have been employed in past work. However, due to the lack of a cohesive framework, these objectives often have a narrow scope of application and are limited by their efficiency or accuracy. In this paper, we propose HandyPriors, a unified and general pipeline for human-object interaction scenes by leveraging recent advances in differentiable physics and rendering. Our approach uses rendering priors to align with input images and segmentation masks, while physics priors mitigate penetration and relative-sliding across frames. Furthermore, we present two alternatives for hand and object pose estimation. The optimization-based pose estimation achieves high accuracy, while the filtering-based tracking, which utilizes the differentiable priors as dynamics and observation models, runs faster. We show that HandyPriors achieves comparable or better results in the pose estimation task, and the differentiable physics module enables us to predict contact information for pose refinement. We also show that our approach generalizes to perception tasks including robotic hand manipulation and human-object pose estimation in the wild.
+
+                            </p> -->
+                        </span>
+                        <div style="text-align: center;">
+                            <!-- <button onclick="moreOrLess($('#abstract2'))">Show Abstract</button> -->
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="row_type_B">
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Nan Jiang, Zhiyuan Zhang, Hongjie Li, Xiaoxuan Ma, Zan Wang, Yixin Chen, Tengyu Liu, Yixin Zhu, Siyuan Huang
+                            </div>
+                        <div style="text-align: center;">
+                            <a href="https://arxiv.org/pdf/2403.08629" target="_blank">[PDF]</a>
+                            <!-- <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+                        </div>
+                    </td>
+                    <td id="abstract2">
+                        <p class="poster_title">
+                            Scaling Up Dynamic Human-Scene Interaction Modeling
+                         <span class="hidden">
+                            <!-- <p><strong>Abstract:</strong>
+                                Various heuristic objectives for modeling hand-object interaction have been employed in past work. However, due to the lack of a cohesive framework, these objectives often have a narrow scope of application and are limited by their efficiency or accuracy. In this paper, we propose HandyPriors, a unified and general pipeline for human-object interaction scenes by leveraging recent advances in differentiable physics and rendering. Our approach uses rendering priors to align with input images and segmentation masks, while physics priors mitigate penetration and relative-sliding across frames. Furthermore, we present two alternatives for hand and object pose estimation. The optimization-based pose estimation achieves high accuracy, while the filtering-based tracking, which utilizes the differentiable priors as dynamics and observation models, runs faster. We show that HandyPriors achieves comparable or better results in the pose estimation task, and the differentiable physics module enables us to predict contact information for pose refinement. We also show that our approach generalizes to perception tasks including robotic hand manipulation and human-object pose estimation in the wild.
+
+                            </p> -->
+                        </span>
+                        <div style="text-align: center;">
+                            <!-- <button onclick="moreOrLess($('#abstract2'))">Show Abstract</button> -->
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="row_type_B">
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Yiming Xie, Varun Jampani, Lei Zhong, Deqing Sun, Huaizu Jiang
+                            </div>
+                        <div style="text-align: center;">
+                            <a href="https://arxiv.org/pdf/2304.02061" target="_blank">[PDF]</a>
+                            <!-- <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+                        </div>
+                    </td>
+                    <td id="abstract2">
+                        <p class="poster_title">
+                            OmniControl: Control Any Joint at Any Time for Human Motion Generation
+
+                         <span class="hidden">
+                            <!-- <p><strong>Abstract:</strong>
+                                Various heuristic objectives for modeling hand-object interaction have been employed in past work. However, due to the lack of a cohesive framework, these objectives often have a narrow scope of application and are limited by their efficiency or accuracy. In this paper, we propose HandyPriors, a unified and general pipeline for human-object interaction scenes by leveraging recent advances in differentiable physics and rendering. Our approach uses rendering priors to align with input images and segmentation masks, while physics priors mitigate penetration and relative-sliding across frames. Furthermore, we present two alternatives for hand and object pose estimation. The optimization-based pose estimation achieves high accuracy, while the filtering-based tracking, which utilizes the differentiable priors as dynamics and observation models, runs faster. We show that HandyPriors achieves comparable or better results in the pose estimation task, and the differentiable physics module enables us to predict contact information for pose refinement. We also show that our approach generalizes to perception tasks including robotic hand manipulation and human-object pose estimation in the wild.
+
+                            </p> -->
+                        </span>
+                        <div style="text-align: center;">
+                            <!-- <button onclick="moreOrLess($('#abstract2'))">Show Abstract</button> -->
+                        </div>
+                    </td>
+                </tr>
+
+
+                <tr class="row_type_B">
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Yannan He, Garvita Tiwari, Tolga Birdal, Jan Eric Lenssen, Gerard Pons-Moll
+                            </div>
+                        <div style="text-align: center;">
+                            <a href="https://arxiv.org/pdf/2304.02061" target="_blank">[PDF]</a>
+                            <!-- <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+                        </div>
+                    </td>
+                    <td id="abstract2">
+                        <p class="poster_title">
+                            NRDF: Neural Riemannian Distance Fields for Learning Articulated Pose Priors
+
+                         <span class="hidden">
+                            <!-- <p><strong>Abstract:</strong>
+                                Various heuristic objectives for modeling hand-object interaction have been employed in past work. However, due to the lack of a cohesive framework, these objectives often have a narrow scope of application and are limited by their efficiency or accuracy. In this paper, we propose HandyPriors, a unified and general pipeline for human-object interaction scenes by leveraging recent advances in differentiable physics and rendering. Our approach uses rendering priors to align with input images and segmentation masks, while physics priors mitigate penetration and relative-sliding across frames. Furthermore, we present two alternatives for hand and object pose estimation. The optimization-based pose estimation achieves high accuracy, while the filtering-based tracking, which utilizes the differentiable priors as dynamics and observation models, runs faster. We show that HandyPriors achieves comparable or better results in the pose estimation task, and the differentiable physics module enables us to predict contact information for pose refinement. We also show that our approach generalizes to perception tasks including robotic hand manipulation and human-object pose estimation in the wild.
+
+                            </p> -->
+                        </span>
+                        <div style="text-align: center;">
+                            <!-- <button onclick="moreOrLess($('#abstract2'))">Show Abstract</button> -->
+                        </div>
+                    </td>
+                </tr>
+                 
+            </table>
+
+
+<h2 id="contact">Contact Info</h2>
+<p>E-mail: 
+<a href="mailto:rhobinchallenge@gmail.com" target="_blank">humogen2024@gmail.com</a>
+</p>
+
+
+
+<div style="clear: both;">&nbsp;</div>
+</div><br><br>
+
+</body>
+
+</html>
