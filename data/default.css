@@ -24,9 +24,9 @@ ul#pc li {
     margin-left: 60px;
   }
 
-  .my-image-box-header img {
-    margin: 10px; /* Optional: Add some spacing between the images */
-  }
+  /* .my-image-box-header img {
+    margin: 10px; Optional: Add some spacing between the images 
+  }*/
 
 .my-image-box img {
     display: block;
