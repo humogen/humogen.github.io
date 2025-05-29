@@ -1,0 +1,457 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>HuMoGen Workshop@CVPR24</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link href="data/default.css" rel="stylesheet" type="text/css" />
+    <!-- <link rel="icon" type="image/png" href="./data/humogen_logo.png" /> -->
+    <meta property='og:title' content='HuMoGen: Workshop on Human Motion Generation @ CVPR24'/>
+    <meta property='og:url' content='https://humogen.github.io/' />
+    <meta property="og:type" content="website" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function moreOrLess(tableData) {
+            obj = tableData.find("span");
+            button = tableData.find("button");
+            console.log(obj.hasClass("hidden"))
+            if (obj.hasClass("hidden")) {
+                obj.slideDown("fast");
+                obj.removeClass("hidden");
+                button.html("Hide Abstract");
+            } else {
+                obj.slideUp("fast");
+                obj.addClass("hidden");
+                button.html("Show Abstract");
+            }
+        }
+    </script>
+  </head>
+
+  <body>
+    <div id="header">
+      <div id="logo">
+    <h1>
+        <center>
+             <span style="font-size:50%;color:#777;font-weight:normal">The first Workshop on</span><br>
+             Human Motion Generation (HuMoGen)
+             
+        </center>
+    </h1><br>
+  <div class="my-image-box-header">
+   <center><img src="./data/humogen_logo.png" alt="humogen_logo" height="190">
+    <!-- <img src="data/Adobe_Corporate_logo.svg.png" width="320" height="83">  -->
+  </center>
+    
+  </div>
+  <h2>
+    <center>
+      <span style="font-size:150%;color:#777;font-weight:normal">
+          <a href="https://cvpr.thecvf.com/" target="_blank">CVPR 2024</a>  </span>
+          <br>
+      <span style="font-size:150%;color:#000;font-weight:normal">Tuesday, June 18 - Summit 430 </span>
+      <br>
+      <span style="font-size:150%;color:#000;font-weight:normal">8:30 AM–12:00 PM </span>
+      <!-- <span style="font-size:92%;color:#777;font-weight:bold">In Person</span><br> -->
+      <!-- <span style="font-size:130%;color:#777;font-weight:bold">East 18@Vancouver Convention Center</span>       -->
+    </center>
+    </h2><br>
+</div>
+  
+    <div id="menu">
+    <center>
+      <ul>
+        <li class="first"><a href="./index.html" accesskey="1">Home</a></li>
+      </ul>
+    </center>
+</div>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+              mybutton.style.display = "block";
+                } else {
+                        mybutton.style.display = "none";
+                          }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+      document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+}
+</script>
+
+
+        <div id="content">
+<!-- <p>
+<ul>
+<li>
+    We are hosting <a href="https://app.gather.town/app/zDHzSsCHaRrEvEq4/ECCV%20VOLI%20Workshop" target="_blank">the poster session</a> on GatherTown (check out <a href="./gathertown_instruction.pdf" target="_blank">the GatherTown instructions</a> on how to join).
+</li>
+</ul>
+</p> -->
+
+<center>
+
+           <!--  <h2>Paper Presentation</h2>
+  	Find your poster board id here: <a href="https://docs.google.com/spreadsheets/d/1kjM7L1hr7oLT9TNKKIE6iLeltEUrSiiKZ-DFiHzzTWQ/edit?usp=sharing">Poster Board Assignment</a> -->
+
+            <table>
+                <tr class="row_type_A">
+                    <td width="20px" , class="paper_id">1</td>
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">Julian Tanke, Takashi Shibuya, Kengo Uchida, Koichi Saito, Yuki Mitsufuji
+                                </span></strong>
+                        </div>
+                        <div style="text-align: center;">
+                            <a href="https://arxiv.org/pdf/2505.09827" target="_blank">[PDF]</a>
+                            <!-- <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+                        </div>
+                    </td>
+
+
+                    <td id="paper1">
+                        <p class="poster_title">
+                            Dyadic Mamba: Long-term Dyadic Human Motion Synthesis 
+                        </p>
+                        <span class="hidden">
+                            <p><strong>Abstract:</strong>
+                                Generating realistic dyadic human motion from text descriptions presents significant challenges, particularly for extended interactions that exceed typical training sequence lengths. While recent transformer-based approaches have shown promising results for short-term dyadic motion synthesis, they struggle with longer sequences due to inherent limitations in positional encoding schemes. In this paper, we introduce Dyadic Mamba, a novel approach that leverages State-Space Models (SSMs) to generate high-quality dyadic human motion of arbitrary length. Our method employs a simple yet effective architecture that facilitates information flow between individual motion sequences through concatenation, eliminating the need for complex cross-attention mechanisms. We demonstrate that Dyadic Mamba achieves competitive performance on standard short-term benchmarks while significantly outperforming transformer-based approaches on longer sequences. Additionally, we propose a new benchmark for evaluating long-term motion synthesis quality, providing a standardized framework for future research. Our results demonstrate that SSM-based architectures offer a promising direction for addressing the challenging task of long-term dyadic human motion synthesis from text descriptions.
+                            </p>
+                        </span>
+                        <div style="text-align: center;">
+                            <button onclick="moreOrLess($('#paper1'))">Show Abstract</button>
+                        </div>
+                    </td>
+                </tr>
+               
+               <tr class="row_type_B">
+                    <td width="20px" , class="paper_id">2</td>
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Xiaogang Peng, Yiming Xie, Zizhao Wu, Varun Jampani, Deqing Sun, Huaizu Jiang                                </span></strong>
+                        </div>
+                        <div style="text-align: center;">
+                            <a href="https://arxiv.org/pdf/2312.06553" target="_blank">[PDF]</a>
+                            <!-- <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+                        </div>
+                    </td>
+                    <td id="paper2">
+                        <p class="poster_title">
+                            HOI-Diff: Text-Driven Synthesis of 3D Human-Object Interactions using Diffusion Models                         </p>
+                        <span class="hidden">
+                            <p><strong>Abstract:</strong>
+                                We address the problem of generating realistic 3D human object interactions (HOIs) driven by textual prompts. To this end, we take a modular design and decompose the complex task into simpler subtasks. We first develop a dual-branch diffusion model (DBDM) to generate both human and object motions conditioned on the input text, and encourage coherent motions by a cross-attention communication module between the human and object motion generation branches. We also develop an affordance prediction diffusion model (APDM) to predict the contacting area between the human and object during the interactions driven by the textual prompt. The APDM is independent of the results by the DBDM and thus can correct potential errors by the latter. Moreover, it stochastically generates the contacting points to diversify the generated motions. Finally, we incorporate the estimated contacting points into the classifier-guidance to achieve accurate and close contact between humans and objects. To train and evaluate our approach, we annotate BEHAVE dataset with text descriptions. Experimental results on BEHAVE and OMOMO demonstrate that our approach produces realistic HOIs with various interactions and different types of objects.                            </p>
+                        </span>
+                        <div style="text-align: center;">
+                            <button onclick="moreOrLess($('#paper2'))">Show Abstract</button>
+                        </div>
+                    </td>
+                </tr>
+                 
+
+                <tr class="row_type_B">
+                    <td width="20px" , class="paper_id">3</td>
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Leo Bringer, Joey Wilson, Kira Barton, Maani Ghaffari                               </span></strong>
+                        </div>
+                        <div style="text-align: center;">
+                            <a href="https://arxiv.org/pdf/2410.03860" target="_blank">[PDF]</a>
+                            <!-- <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+                        </div>
+                    </td>
+                    <td id="paper3">
+                        <p class="poster_title">
+                            MDMP: Multi-modal Diffusion for supervised Motion Predictions with uncertainty</p>
+                        <span class="hidden">
+                            <p><strong>Abstract:</strong>
+                                This paper introduces a Multi-modal Diffusion model for Motion Prediction (MDMP) that integrates and synchronizes skeletal data and textual descriptions of actions to generate refined long-term motion predictions with quantifiable uncertainty. Existing methods for motion forecasting or motion generation rely solely on either prior motions or text prompts, facing limitations with precision or control, particularly over extended durations. The multi-modal nature of our approach enhances the contextual understanding of human motion, while our graph-based transformer framework effectively capture both spatial and temporal motion dynamics. As a result, our model consistently outperforms existing generative techniques in accurately predicting long-term motions. Additionally, by leveraging diffusion models' ability to capture different modes of prediction, we estimate uncertainty, significantly improving spatial awareness in human-robot interactions by incorporating zones of presence with varying confidence levels.                            </p>
+                        </span>
+                        <div style="text-align: center;">
+                            <button onclick="moreOrLess($('#paper3'))">Show Abstract</button>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="row_type_B">
+                    <td width="20px" , class="paper_id">4</td>
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Elly Akhoundi, Hung Yu Ling, Anup Anand Deshmukh, Judith Bütepage                               </span></strong>
+                        </div>
+                        <!-- <div style="text-align: center;">
+                            <a href="https://openaccess.thecvf.com/content/CVPR2024W/HuMoGen/papers/Li_Two-Person_Interaction_Augmentation_with_Skeleton_Priors_CVPRW_2024_paper.pdf" target="_blank">[PDF]</a>
+                        </div>
+ -->                    </td>
+                    <td id="paper4">
+                        <p class="poster_title">
+                                SILK: Smooth InterpoLation frameworK for motion in-betweening</p>
+                        <span class="hidden">
+                            <p><strong>Abstract:</strong>
+                                Motion in-betweening is a crucial tool for animators, enabling intricate control over pose-level details in each keyframe. Recent machine learning solutions for motion in-betweening rely on complex models, incorporating skeleton-aware architectures or requiring multiple modules and training steps. In this work, we introduce a simple yet effective Transformer-based framework, employing a single Transformer encoder to synthesize realistic motions in motion in-betweening tasks. We find that data modeling choices play a significant role in improving in-betweening performance. Among others, we show that increasing data volume can yield equivalent or improved motion transitions, that the choice of pose representation is vital for achieving high-quality results, and that incorporating velocity input features enhances animation performance. These findings challenge the assumption that model complexity is the primary determinant of animation quality and provide insights into a more data-centric approach to motion interpolation. Additional videos and supplementary material are available at \url{https://silk-paper.github.io}.                            </p>
+                        </span>
+                        <div style="text-align: center;">
+                            <button onclick="moreOrLess($('#paper4'))">Show Abstract</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="row_type_B">
+                    <td width="20px" , class="paper_id">5</td>
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Kengo Uchida, Takashi Shibuya, Yuhta Takida, Naoki Murata, Julian Tanke, Shusuke Takahashi, Yuki Mitsufuji</span></strong>
+                        </div>
+                        <div style="text-align: center;">
+                            <a href="https://arxiv.org/pdf/2406.01867" target="_blank">[PDF]</a>
+                            <!-- <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+                        </div>
+                    </td>
+                    <td id="paper5">
+                        <p class="poster_title">
+                                MoLA: Motion Generation and Editing with Latent Diffusion Enhanced by Adversarial Training</p>
+                        <span class="hidden">
+                            <p><strong>Abstract:</strong>
+                                In text-to-motion generation, controllability as well as generation quality and speed has become increasingly critical. The controllability challenges include generating a motion of a length that matches the given textual description and editing the generated motions according to control signals, such as the start-end positions and the pelvis trajectory. In this paper, we propose MoLA, which provides fast, high-quality, variable-length motion generation and can also deal with multiple editing tasks in a single framework. Our approach revisits the motion representation used as inputs and outputs in the model, incorporating an activation variable to enable variable-length motion generation. Additionally, we integrate a variational autoencoder and a latent diffusion model, further enhanced through adversarial training, to achieve high-quality and fast generation. Moreover, we apply a training-free guided generation framework to achieve various editing tasks with motion control inputs. We quantitatively show the effectiveness of adversarial learning in text-to-motion generation, and demonstrate the applicability of our editing framework to multiple editing tasks in the motion domain.                            </p>
+                        </span>
+                        <div style="text-align: center;">
+                            <button onclick="moreOrLess($('#paper5'))">Show Abstract</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="row_type_B">
+                    <td width="20px" , class="paper_id">6</td>
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Inwoo Hwang, Jinseok Bae, Donggeun Lim, Young Min Kim                               </span></strong>
+                        </div>
+                        <!-- <div style="text-align: center;">
+                            <a href="https://openaccess.thecvf.com/content/CVPR2024W/HuMoGen/papers/Hogue_DiffTED_One-shot_Audio-driven_TED_Talk_Video_Generation_with_Diffusion-based_Co-speech_CVPRW_2024_paper.pdf" target="_blank">[PDF]</a>
+                        </div>
+ -->                    </td>
+                    <td id="paper6">
+                        <p class="poster_title">
+                            Goal-Driven Human Motion Synthesis in Diverse Tasks</p>
+                        <span class="hidden">
+                            <p><strong>Abstract:</strong>
+                                We propose a framework for goal-driven human motion generation, which can synthesize interaction-rich scenarios. Given the goal positions for key joints, our pipeline automatically generates natural full-body motion that approaches the target in cluttered environments. Our pipeline solves the complex constraints in a tractable formulation by disentangling the process of motion generation into two stages. The first stage computes the trajectory of the key joints like hands and feet to encourage the character to naturally approach the target position while avoiding possible physical violation. We demonstrate that diffusion-based guidance sampling can flexibly adapt to the local scene context while satisfying goal conditions. Then the subsequent second stage can easily generate plausible full-body motion that traverses the key joint trajectories. The proposed pipeline applies to various scenarios that have to concurrently account for 3D scene geometry and body joint configurations.                            </p>
+                        </span>
+                        <div style="text-align: center;">
+                            <button onclick="moreOrLess($('#paper6'))">Show Abstract</button>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="row_type_B">
+                    <td width="20px" , class="paper_id">7</td>
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Gabriel Maldonado, Armin Danesh Pazho, Ghazal Alinezhad Noghre, Vinit Katariya, Hamed Tabkhi                               </span></strong>
+                        </div>
+                        <div style="text-align: center;">
+                            <a href="https://arxiv.org/pdf/2505.10810" target="_blank">[PDF]</a>
+                        </div>
+                    </td>
+                    <td id="paper7">
+                        <p class="poster_title">
+                            MoCLIP Motion-Aware Fine-Tuning and Distillation of CLIP for Human Motion Generation</p>
+                        <span class="hidden">
+                            <p><strong>Abstract:</strong>
+                                Human motion generation is essential for fields such as animation, robotics, and virtual reality, requiring models that effectively capture motion dynamics from text descriptions. Existing approaches often rely on Contrastive Language-Image Pretraining (CLIP)-based text encoders, but their training on text-image pairs constrains their ability to understand temporal and kinematic structures inherent in motion and motion generation. This work introduces MoCLIP, a fine-tuned CLIP model with an additional motion encoding head, trained on motion sequences using contrastive learning and tethering loss. By explicitly incorporating motion-aware representations, MoCLIP enhances motion fidelity while remaining compatible with existing CLIP-based pipelines and seamlessly integrating into various CLIP-based methods. Experiments demonstrate that MoCLIP improves Top-1, Top-2, and Top-3 accuracy while maintaining competitive FID, leading to improved text-to-motion alignment results. These results highlight MoCLIP’s versatility and effectiveness, establishing it as a robust framework for enhancing motion generation.                            </p>
+                        </span>
+                        <div style="text-align: center;">
+                            <button onclick="moreOrLess($('#paper7'))">Show Abstract</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+        </center>
+
+
+            <h2>Abstract Presentations</h2>
+            <table>
+               
+               <tr class="row_type_B">
+
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Sirui Xu, Hung Yu Ling, Yu-Xiong Wang, Liang-Yan Gui                               </span></strong>
+                        </div>
+                        <div style="text-align: center;">
+                            <a href="https://arxiv.org/pdf/2502.20390" target="_blank">[PDF]</a>
+                        </div>
+                    </td>
+                    <td id="abstract1">
+                        <p class="poster_title">
+                            InterMimic: Towards Universal Whole-Body Control for Physics-Based Human-Object Interactions</p>
+                        <span class="hidden">
+                            <p><strong>Abstract:</strong>
+                                Achieving realistic simulations of humans interacting with a wide range of objects has long been a fundamental goal. Extending physics-based motion imitation to complex human-object interactions (HOIs) is challenging due to intricate human-object coupling, variability in object geometries, and artifacts in motion capture data, such as inaccurate contacts and limited hand detail. We introduce InterMimic, a framework that enables a single policy to robustly learn from hours of imperfect MoCap data covering diverse full-body interactions with dynamic and varied objects. Our key insight is to employ a curriculum strategy – perfect first, then scale up. We first train subject-specific teacher policies to mimic, retarget, and refine motion capture data. Next, we distill these teachers into a student policy, with the teachers acting as online experts providing direct supervision, as well as high-quality references. Notably, we incorporate RL fine-tuning on the student policy to surpass mere demonstration replication and achieve higher-quality solutions. Our experiments demonstrate that InterMimic produces realistic and diverse interactions across multiple HOI datasets. The learned policy generalizes in a zero-shot manner and seamlessly integrates with kinematic generators, elevating the framework from mere imitation to generative modeling of complex human-object interactions.                           </p>
+                        </span>
+                        <div style="text-align: center;">
+                            <button onclick="moreOrLess($('#abstract1'))">Show Abstract</button>
+                        </div>
+                    </td>
+                </tr>
+                 
+
+                <tr class="row_type_B">
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Pablo Ruiz-Ponce, German Barquero, Cristina Palmero, Sergio Escalera, José García-Rodríguez</span></strong>
+                            </div>
+                        <div style="text-align: center;">
+                            <a href="https://arxiv.org/abs/2504.01019" target="_blank">[PDF]</a>
+                            <!-- <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+                        </div>
+                    </td>
+                    <td id="abstract2">
+                        <p class="poster_title">
+                            MixerMDM: Learnable Composition of Human Motion Diffusion Models       </p>                  
+                        <span class="hidden">
+                            <p><strong>Abstract:</strong>
+                                Generating human motion guided by conditions such as textual descriptions is challenging due to the need for datasets with pairs of high-quality motion and their corresponding conditions. The difficulty increases when aiming for finer control in the generation. To that end, prior works have proposed to combine several motion diffusion models pre-trained on datasets with different types of conditions, thus allowing control with multiple conditions. However, the proposed merging strategies overlook that the optimal way to combine the generation processes might depend on the particularities of each pre-trained generative model and also the specific textual descriptions. In this context, we introduce MixerMDM, the first learnable model composition technique for combining pre-trained text-conditioned human motion diffusion models. Unlike previous approaches, MixerMDM provides a dynamic mixing strategy that is trained in an adversarial fashion to learn to combine the denoising process of each model depending on the set of conditions driving the generation. By using MixerMDM to combine single- and multi-person motion diffusion models, we achieve fine-grained control on the dynamics of every person individually, and also on the overall interaction. Furthermore, we propose a new evaluation technique that, for the first time in this task, measures the interaction and individual quality by computing the alignment between the mixed generated motions and their conditions as well as the capabilities of MixerMDM to adapt the mixing throughout the denoising process depending on the motions to mix.
+
+                            </p>
+                        </span>
+                        <div style="text-align: center;">
+                            <button onclick="moreOrLess($('#abstract2'))">Show Abstract</button>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="row_type_B">
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Zhengyuan Li, Kai Cheng, Anindita Ghosh, Uttaran Bhattacharya Liang-Yan Gui, Aniket Bera</span></strong>
+                            </div>
+                        <div style="text-align: center;">
+                            <a href="https://arxiv.org/abs/2503.18211" target="_blank">[PDF]</a>
+                            <!-- <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+                        </div>
+                    </td>
+                    <td id="abstract3">
+                        <p class="poster_title">
+                            SimMotionEdit: Text-Based Human Motion Editing with Motion Similarity Prediction  </p>                       
+                            <span class="hidden">
+                            <p><strong>Abstract:</strong>
+                                Text-based 3D human motion editing is a critical yet challenging task in computer vision and graphics. While training-free approaches have been explored, the recent release of the MotionFix dataset, which includes source-text-motion triplets, has opened new avenues for training, yielding promising results. However, existing methods struggle with precise control, often leading to misalignment between motion semantics and language instructions. In this paper, we introduce a related task, motion similarity prediction, and propose a multi-task training paradigm, where we train the model jointly on motion editing and motion similarity prediction to foster the learning of semantically meaningful representations. To complement this task, we design an advanced Diffusion-Transformer-based architecture that separately handles motion similarity prediction and motion editing. Extensive experiments demonstrate the state-of-the-art performance of our approach in both editing alignment and fidelity.
+                            </p>
+                        </span>
+                        <div style="text-align: center;">
+                            <button onclick="moreOrLess($('#abstract3'))">Show Abstract</button>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="row_type_B">
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Sirui Xu, Dongting Li, Yucheng Zhang, Xiyan Xu, Qi Long, Ziyin Wang, Yunzhi Lu, Shuchang Dong, Hezi Jiang, Akshat Gupta, Yu-Xiong Wang, Liang-Yan Gui</span></strong>
+                            </div>
+                        <div style="text-align: center;">
+                            <a href="https://github.com/wzyabcas/InterAct" target="_blank">[PDF]</a>
+                            <!-- <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+                        </div>
+                    </td>
+                    <td id="abstract4">
+                        <p class="poster_title">
+                            InterAct: Advancing Large-Scale Versatile 3D Human-Object Interaction Generation</p>
+                            <span class="hidden"> 
+                            <p><strong>Abstract:</strong>
+                                While large-scale human motion capture datasets have advanced human motion generation, modeling and generating dynamic 3D human-object interactions (HOIs) remains challenging due to dataset limitations. These datasets often lack extensive, high-quality text-interaction pair data and exhibit artifacts such as contact penetration, floating, and incorrect hand motions. To address these issues, we introduce InterAct, a large-scale 3D HOI benchmark with key contributions in both dataset and methodology. First, we consolidate 21.81 hours of HOI data from diverse sources, standardizing and enriching them with detailed textual annotations. Second, we propose a unified optimization framework that enhances data quality by minimizing artifacts and restoring hand motions. Leveraging the insight of contact invariance, we preserve human-object relationships while introducing motion variations, thereby expanding the dataset to 30.70 hours. Third, we introduce six tasks to benchmark existing methods and develop a unified HOI generative model based on multi-task learning that achieves state-of-the-art results. Extensive experiments validate the utility of our dataset as a foundational resource for advancing 3D human-object interaction generation. The dataset will be publicly accessible to support further research in the field.
+                            </p> 
+                        </span>
+                        <div style="text-align: center;">
+                            <button onclick="moreOrLess($('#abstract4'))">Show Abstract</button>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="row_type_B">
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Seokhyeon Hong, Chaelin Kim, Serin Yoon, Junghyun Nam, Sihun Cha, Junyong Noh</span></strong>
+                            </div>
+                        <div style="text-align: center;">
+                            <!-- <a href="https://arxiv.org/pdf/2503.13836" target="_blank">[PDF]</a> -->
+                            <!-- <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+                        </div>
+                    </td>
+                    <td id="abstract5">
+                        <p class="poster_title">
+                            SALAD: Skeleton-aware Latent Diffusion for Text-driven Motion Generation and Editing </p>                        <span class="hidden">
+                            <p><strong>Abstract:</strong>
+                                Text-driven motion generation has advanced significantly with the rise of denoising diffusion models. However, previous methods often oversimplify representations for the skeletal joints, temporal frames, and textual words, limiting their ability to fully capture the information within each modality and their interactions. Moreover, when using pre-trained models for downstream tasks, such as editing, they typically require additional efforts, including manual interventions, optimization, or fine-tuning. In this paper, we introduce a skeleton-aware latent diffusion (SALAD), a model that explicitly captures the intricate inter-relationships between joints, frames, and words. Furthermore, by leveraging cross-attention maps produced during the generation process, we enable the attention-based zero-shot text-driven motion editing using a pre-trained SALAD model, requiring no additional user input beyond text prompts. Our approach significantly outperforms previous methods in terms of text-motion alignment without compromising generation quality, and demonstrates practical versatility by providing diverse editing capabilities beyond generation.
+
+                            </p>
+                        </span>
+                        <div style="text-align: center;">
+                            <button onclick="moreOrLess($('#abstract5'))">Show Abstract</button>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="row_type_B">
+                    <td width="200px">
+                        <div style="text-align: center;">
+                            <strong><span class="author">
+                                Kwan Yun, Seokhyeon Hong, Chaelin Kim, Junyong Noh
+                            </div>
+                        <div style="text-align: center;">
+                            <a href="https://arxiv.org/abs/2503.08417" target="_blank">[PDF]</a>
+                            <!-- <a href="https://youtu.be/" target="_blank">[Video]</a> -->
+                        </div>
+                    </td>
+                    <td id="abstract6">
+                        <p class="poster_title">
+                            AnyMoLe: Any Character Motion In-betweening Leveraging Video Diffusion Models               </p>          <span class="hidden">
+                            <p><strong>Abstract:</strong>
+                                Despite recent advancements in learning-based motion in-betweening, a key limitation has been overlooked: the requirement for character-specific datasets. In this work, we introduce AnyMoLe, a novel method that addresses this limitation by leveraging video diffusion models to generate motion in-between frames for arbitrary characters without external data. Our approach employs a two-stage frame generation process to enhance contextual understanding. Furthermore, to bridge the domain gap between real-world and rendered character animations, we introduce ICAdapt, a fine-tuning technique for video diffusion models. Additionally, we propose a motion-video mimicking'' optimization technique, enabling seamless motion generation for characters with arbitrary joint structures using 2D and 3D-aware features. AnyMoLe significantly reduces data dependency while generating smooth and realistic transitions, making it applicable to a wide range of motion in-betweening tasks.
+
+                            </p>
+                        </span>
+                        <div style="text-align: center;">
+                            <button onclick="moreOrLess($('#abstract6'))">Show Abstract</button>
+                        </div>
+                    </td>
+                </tr>
+                 
+            </table>
+
+
+<h2 id="contact">Contact Info</h2>
+<p>E-mail: 
+<a href="mailto:rhobinchallenge@gmail.com" target="_blank">humogencvpr@gmail.com</a>
+</p>
+
+
+
+<div style="clear: both;">&nbsp;</div>
+</div><br><br>
+
+</body>
+
+</html>
